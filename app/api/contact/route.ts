@@ -25,6 +25,12 @@ function renderHtml({
     </div>
   `;
 }
+// 1) Put this helper near the top of route.ts (above GET/POST):
+function escapeHtml(s: string) {
+  return s.replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  }[c]!));
+}
 
 // Simple sanity check in browser/curl
 export async function GET() {
@@ -72,6 +78,54 @@ export async function POST(req: Request) {
       html: renderHtml({ name, email, message }),
       text: `From: ${name} <${email}>\n\n${message}`,
     });
+// 2) Inside POST(), after your main send TO YOU, add this block:
+await resend.emails.send({
+  from: "noreply@matthewjamescarbonell.com",
+  to: process.env.CONTACT_TO!,
+  replyTo: email, // camelCase
+  subject: `New message from ${name}`,
+  html: renderHtml({ name, email, message }),
+  text: `From: ${name} <${email}>\n\n${message}`,
+});
+
+// --- Friendly auto-reply (best-effort) ---
+try {
+  const contactTo = String(process.env.CONTACT_TO || "").toLowerCase();
+  const isNoReply = /no[-_.]?reply@/i.test(email) || /mailer-daemon@|postmaster@/i.test(email);
+  const isSameAsYou = email.toLowerCase() === contactTo;
+
+  if (!isNoReply && !isSameAsYou) {
+    await resend.emails.send({
+      from: "noreply@matthewjamescarbonell.com", // your domain sender
+      to: email,                                  // user who submitted
+      replyTo: contactTo,                          // replies go to you
+      subject: "Thanks — I got your message",
+      text:
+`Hi ${name || "there"},
+
+Thanks for reaching out! — I received your message and will get back to you soon.
+
+— Matthew
+matthewjamescarbonell.com`,
+      html: `
+        <div style="font-family:Arial,sans-serif;line-height:1.6">
+          <p>Hi ${name ? escapeHtml(name) : "there"},</p>
+          <p>Thanks for reaching out via my website — I received your message and will get back to you soon.</p>
+          <hr style="border:none;border-top:1px solid #eee;margin:16px 0" />
+          <p style="margin:0 0 4px 0;font-weight:600">You sent:</p>
+          <pre style="white-space:pre-wrap;margin:0;background:#fafafa;padding:12px;border:1px solid #eee;border-radius:8px">${escapeHtml(message)}</pre>
+          <p style="color:#6b7280;font-size:12px;margin-top:16px">If you didn’t submit this, you can ignore this email.</p>
+          <p style="color:#6b7280;font-size:12px;margin:0">— Matthew • <a href="https://www.matthewjamescarbonell.com">matthewjamescarbonell.com</a></p>
+        </div>
+      `,
+    });
+  }
+} catch (e) {
+  console.error("[/api/contact] auto-reply failed:", e);
+}
+// --- end auto-reply ---
+
+return NextResponse.json({ ok: true }, { status: 200 });
 
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (err) {
