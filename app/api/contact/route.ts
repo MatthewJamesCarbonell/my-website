@@ -44,7 +44,7 @@ export async function OPTIONS() {
 
 export async function POST(req: Request) {
   try {
-    // --- 1) Parse incoming data (JSON or form) ---
+    // --- Parse input (JSON or form) ---
     const ct = req.headers.get("content-type") || "";
     let name = "", email = "", message = "", company = "";
     if (ct.includes("application/json")) {
@@ -61,39 +61,59 @@ export async function POST(req: Request) {
       company = String(form.get("company") || "");
     }
 
-    // Honeypot (bots fill hidden field)
-    if (company) return NextResponse.json({ ok: true }, { status: 200 });
+    if (company) return NextResponse.json({ ok: true, honeypot: true }, { status: 200 });
     if (!name || !email || !message) {
       return NextResponse.json({ ok: false, error: "Missing fields" }, { status: 400 });
     }
 
-    // --- 2) Send the lead to YOU ---
-    await resend.emails.send({
-      from: "noreply@matthewjamescarbonell.com",   // your domain sender
-      to: process.env.CONTACT_TO!,                 // your inbox
-      replyTo: email,                              // user’s address
-      subject: `New message from ${name}`,
-      html: renderHtml({ name, email, message }),
-      text: `From: ${name} <${email}>\n\n${message}`,
-    });
-
-    // --- 3) Auto-reply to THEM (minimal + debug) ---
-    let autoReplySent = false;
+    // --- Send to YOU ---
+    let leadId: string | null = null;
     try {
-      await resend.emails.send({
-        from: "noreply@matthewjamescarbonell.com",         // your domain sender
-        to: email,                                         // the user
-        replyTo: String(process.env.CONTACT_TO || ""),      // replies go to you
+      const leadRes = await resend.emails.send({
+        from: "noreply@matthewjamescarbonell.com",
+        to: process.env.CONTACT_TO!,
+        replyTo: email,
+        subject: `New message from ${name}`,
+        html: renderHtml({ name, email, message }),
+        text: `From: ${name} <${email}>\n\n${message}`,
+      });
+      leadId = (leadRes as any)?.id ?? null;
+    } catch (e) {
+      console.error("[/api/contact] lead send failed:", e);
+      return NextResponse.json({ ok: false, stage: "lead", error: String(e) }, { status: 500 });
+    }
+
+    // --- Auto-reply (minimal) ---
+    let autoReplySent = false;
+    let autoId: string | null = null;
+    try {
+      const autoRes = await resend.emails.send({
+        from: "noreply@matthewjamescarbonell.com",
+        to: email,
+        replyTo: String(process.env.CONTACT_TO || ""),
         subject: "Thanks — I got your message",
         text: `Hi ${name || "there"},\n\nThanks for reaching out — I received your message and will get back to you soon.\n\n— Matthew`,
       });
+      autoId = (autoRes as any)?.id ?? null;
       autoReplySent = true;
     } catch (e) {
       console.error("[/api/contact] auto-reply failed:", e);
+      // We’ll still return ok:true so your user sees success, but include the error
+      return NextResponse.json({
+        ok: true,
+        leadId,
+        autoReplySent: false,
+        autoError: String(e),
+      }, { status: 200 });
     }
 
-    // --- 4) Respond to the browser (note the debug flag) ---
-    return NextResponse.json({ ok: true, autoReplySent }, { status: 200 });
+    // --- Final response ---
+    return NextResponse.json({
+      ok: true,
+      leadId,
+      autoReplySent,
+      autoId,
+    }, { status: 200 });
 
   } catch (err) {
     console.error("[/api/contact] error:", err);
