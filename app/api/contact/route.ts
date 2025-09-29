@@ -1,12 +1,13 @@
+// app/api/contact/route.ts
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-export const runtime = "nodejs";          // ensure Node runtime on Vercel
-export const dynamic = "force-dynamic";   // don't pre-render this route
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// ---------- HTML helper ----------
+// Helper for your lead email body
 function renderHtml({
   name,
   email,
@@ -25,19 +26,16 @@ function renderHtml({
     </div>
   `;
 }
-// 1) Put this helper near the top of route.ts (above GET/POST):
-function escapeHtml(s: string) {
-  return s.replace(/[&<>"']/g, (c) => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
-  }[c]!));
-}
 
-// Simple sanity check in browser/curl
+// Visible version tag so we can confirm the live build
 export async function GET() {
-  return NextResponse.json({ ok: true, method: "GET" }, { status: 200 });
+  return NextResponse.json(
+    { ok: true, method: "GET", v: "apr-debug-3" },
+    { status: 200 }
+  );
 }
 
-// Allow CORS preflight if ever needed
+// Allow preflight if ever needed
 export async function OPTIONS() {
   return NextResponse.json({}, { status: 200 });
 }
@@ -61,12 +59,13 @@ export async function POST(req: Request) {
       company = String(form.get("company") || "");
     }
 
-    if (company) return NextResponse.json({ ok: true, honeypot: true }, { status: 200 });
+    // Honeypot (bots fill hidden field)
+    if (company) return NextResponse.json({ ok: true, v: "apr-debug-3", honeypot: true }, { status: 200 });
     if (!name || !email || !message) {
-      return NextResponse.json({ ok: false, error: "Missing fields" }, { status: 400 });
+      return NextResponse.json({ ok: false, v: "apr-debug-3", error: "Missing fields" }, { status: 400 });
     }
 
-    // --- Send to YOU ---
+    // --- 1) Send the lead to YOU ---
     let leadId: string | null = null;
     try {
       const leadRes = await resend.emails.send({
@@ -80,43 +79,39 @@ export async function POST(req: Request) {
       leadId = (leadRes as any)?.id ?? null;
     } catch (e) {
       console.error("[/api/contact] lead send failed:", e);
-      return NextResponse.json({ ok: false, stage: "lead", error: String(e) }, { status: 500 });
+      return NextResponse.json({ ok: false, v: "apr-debug-3", stage: "lead", error: String(e) }, { status: 500 });
     }
 
-    // --- Auto-reply (minimal) ---
+    // --- 2) Auto-reply to THEM (forced for debug) ---
     let autoReplySent = false;
     let autoId: string | null = null;
     try {
       const autoRes = await resend.emails.send({
-        from: "noreply@matthewjamescarbonell.com",
-        to: email,
+        from: "noreply@matthewjamescarbonell.com", // your domain sender
+        to: email,                                  // the user
         replyTo: String(process.env.CONTACT_TO || ""),
         subject: "Thanks — I got your message",
         text: `Hi ${name || "there"},\n\nThanks for reaching out — I received your message and will get back to you soon.\n\n— Matthew`,
       });
       autoId = (autoRes as any)?.id ?? null;
-      autoReplySent = true;
+      autoReplySent = Boolean(autoId);
     } catch (e) {
       console.error("[/api/contact] auto-reply failed:", e);
-      // We’ll still return ok:true so your user sees success, but include the error
-      return NextResponse.json({
-        ok: true,
-        leadId,
-        autoReplySent: false,
-        autoError: String(e),
-      }, { status: 200 });
+      // Return OK for the user, but include debug info
+      return NextResponse.json(
+        { ok: true, v: "apr-debug-3", autoReplySent: false, autoError: String(e), leadId },
+        { status: 200 }
+      );
     }
 
-    // --- Final response ---
-    return NextResponse.json({
-      ok: true,
-      leadId,
-      autoReplySent,
-      autoId,
-    }, { status: 200 });
+    // --- 3) Return unmistakable debug payload ---
+    return NextResponse.json(
+      { ok: true, v: "apr-debug-3", autoReplySent, autoId, leadId },
+      { status: 200 }
+    );
 
   } catch (err) {
     console.error("[/api/contact] error:", err);
-    return NextResponse.json({ ok: false, error: "Send failed" }, { status: 500 });
+    return NextResponse.json({ ok: false, v: "apr-debug-3", error: "Send failed" }, { status: 500 });
   }
 }
