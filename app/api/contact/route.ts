@@ -44,9 +44,9 @@ export async function OPTIONS() {
 
 export async function POST(req: Request) {
   try {
+    // --- 1) Parse incoming data (JSON or form) ---
     const ct = req.headers.get("content-type") || "";
     let name = "", email = "", message = "", company = "";
-
     if (ct.includes("application/json")) {
       const body = await req.json();
       name = String(body.name || "");
@@ -54,7 +54,6 @@ export async function POST(req: Request) {
       message = String(body.message || "");
       company = String(body.company || "");
     } else {
-      // form-encoded or multipart
       const form = await req.formData();
       name = String(form.get("name") || "");
       email = String(form.get("email") || "");
@@ -64,50 +63,38 @@ export async function POST(req: Request) {
 
     // Honeypot (bots fill hidden field)
     if (company) return NextResponse.json({ ok: true }, { status: 200 });
-
     if (!name || !email || !message) {
       return NextResponse.json({ ok: false, error: "Missing fields" }, { status: 400 });
     }
 
-    // IMPORTANT: keep your own domain as sender; put user's email in Reply-To
+    // --- 2) Send the lead to YOU ---
     await resend.emails.send({
-      from: "noreply@matthewjamescarbonell.com",
-      to: process.env.CONTACT_TO!,
-      replyTo: email, // camelCase for Resend Node SDK
-      subject: `New message from ${name}`,
-      html: renderHtml({ name, email, message }),
-      text: `From: ${name} <${email}>\n\n${message}`,
-    });
-    // 2) Inside POST(), after your main send TO YOU, add this block:
-    await resend.emails.send({
-      from: "noreply@matthewjamescarbonell.com",
-      to: process.env.CONTACT_TO!,
-      replyTo: email, // camelCase
+      from: "noreply@matthewjamescarbonell.com",   // your domain sender
+      to: process.env.CONTACT_TO!,                 // your inbox
+      replyTo: email,                              // user’s address
       subject: `New message from ${name}`,
       html: renderHtml({ name, email, message }),
       text: `From: ${name} <${email}>\n\n${message}`,
     });
 
-    // --- Friendly auto-reply (best-effort) ---
-// --- Minimal auto-reply + debug ---
-let autoReplySent = false;
-try {
-  await resend.emails.send({
-    from: "noreply@matthewjamescarbonell.com",  // your verified domain sender
-    to: email,                                  // the user's address
-    replyTo: String(process.env.CONTACT_TO || ""),
-    subject: "Thanks — I got your message",
-    text: `Hi ${name || "there"},\n\nThanks for reaching out — I received your message and will get back to you soon.\n\n— Matthew`,
-  });
-  autoReplySent = true;
-} catch (e) {
-  console.error("[/api/contact] auto-reply failed:", e);
-}
-// --- end minimal auto-reply ---
+    // --- 3) Auto-reply to THEM (minimal + debug) ---
+    let autoReplySent = false;
+    try {
+      await resend.emails.send({
+        from: "noreply@matthewjamescarbonell.com",         // your domain sender
+        to: email,                                         // the user
+        replyTo: String(process.env.CONTACT_TO || ""),      // replies go to you
+        subject: "Thanks — I got your message",
+        text: `Hi ${name || "there"},\n\nThanks for reaching out — I received your message and will get back to you soon.\n\n— Matthew`,
+      });
+      autoReplySent = true;
+    } catch (e) {
+      console.error("[/api/contact] auto-reply failed:", e);
+    }
 
-return NextResponse.json({ ok: true, autoReplySent }, { status: 200 });
+    // --- 4) Respond to the browser (note the debug flag) ---
+    return NextResponse.json({ ok: true, autoReplySent }, { status: 200 });
 
-    return NextResponse.json({ ok: true }, { status: 200 });
   } catch (err) {
     console.error("[/api/contact] error:", err);
     return NextResponse.json({ ok: false, error: "Send failed" }, { status: 500 });
