@@ -120,9 +120,3 @@
     @apply bg-background text-foreground;
   }
 }
-/* DEBUG: visualize click blockers */
-* { outline: 1px solid rgba(255, 0, 0, 0.08); }
-.fixed, .absolute, [class*="fixed"], [class*="absolute"] {
-  outline: 2px solid rgba(0, 128, 255, 0.6) !important;
-}
-
