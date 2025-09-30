@@ -87,9 +87,9 @@ export async function POST(req: Request) {
             "Precedence": "bulk",
           },
           text:
-`Hi ${name || "there"},
+            `Hi ${name || "there"},
 
-Thanks for reaching out — I received your message and will get back to you soon.
+Thanks for reaching out! I received your message and will get back to you soon.
 
 — Matthew
 matthewjamescarbonell.com`,

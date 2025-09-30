@@ -49,18 +49,18 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 sm:flex-row">
-          <div className="text-sm text-slate-500">
-            © {new Date().getFullYear()}
-          </div>
-          <div className="flex items-center gap-4 text-sm text-slate-600">
-            <a href="#" className="hover:underline">Privacy</a>
-            <a href="#" className="hover:underline">Terms</a>
-            <a href="#" className="hover:underline">Contact</a>
-          </div>
+<footer className="border-t bg-white">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 sm:flex-row">
+        <div className="text-sm text-slate-500">
+          © {new Date().getFullYear()}
         </div>
-      </footer>
-    </div>
-  );
+        <div className="flex items-center gap-4 text-sm text-slate-600">
+          <a href="#" className="hover:underline">Privacy</a>
+          <a href="#" className="hover:underline">Terms</a>
+          <a href="#" className="hover:underline">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+);
 }
