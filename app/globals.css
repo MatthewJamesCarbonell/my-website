@@ -116,7 +116,205 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+:root {
+  --btn-conversation-bg: rgba(255, 255, 255, 0.96);
+}
+
+.dark .btn-conversation {
+  --btn-conversation-bg: rgba(15, 23, 42, 0.92);
+}
+
+.btn-resume {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.btn-resume:hover,
+.btn-resume:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 26px rgba(59, 130, 246, 0.55);
+}
+
+.btn-conversation {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background-color: rgba(15, 23, 42, 0.1) !important;
+  border-color: rgba(148, 163, 184, 0.45) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.45);
+}
+
+.dark .btn-conversation {
+  background-color: rgba(15, 23, 42, 0.4) !important;
+  border-color: rgba(148, 163, 184, 0.35) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.35);
+}
+
+.btn-conversation::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, #38bdf8, #a855f7, #f97316, #22d3ee, #38bdf8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: rainbow-orbit 4s linear infinite;
+  z-index: -2;
+}
+
+.card-pulse {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-pulse::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.35), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.card-pulse:hover::before,
+.card-pulse:focus-within::before {
+  opacity: 1;
+}
+
+.photo-stack {
+  position: relative;
+  border-radius: 1.75rem;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  will-change: transform, box-shadow;
+}
+
+.photo-stack::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.55), rgba(255, 215, 0, 0.35) 55%, rgba(255, 215, 0, 0));
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  z-index: -1;
+}
+
+.photo-stack.photo-pulse-active {
+  transform: scale(1.04);
+  box-shadow: 0 28px 42px rgba(255, 215, 0, 0.22);
+}
+
+.photo-stack.photo-pulse-active::after {
+  opacity: 1;
+}
+
+.core-strengths-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.core-strengths-card::before,
+.core-strengths-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.core-strengths-card::before {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(255, 215, 0, 0.35));
+  z-index: -2;
+}
+
+.core-strengths-card::after {
+  background: rgba(15, 23, 42, 0.2);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.28);
+  z-index: -1;
+}
+
+.core-strengths-card:hover::before,
+.core-strengths-card:focus-within::before,
+.core-strengths-card:hover::after,
+.core-strengths-card:focus-within::after {
+  opacity: 1;
+}
+
+.core-strengths-card:hover,
+.core-strengths-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 40px rgba(15, 23, 42, 0.25);
+}
+
+.btn-conversation:hover,
+.btn-conversation:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 36px rgba(168, 85, 247, 0.5);
+  color: #fff;
+  border-color: transparent !important;
+}
+
+.btn-conversation:hover::before,
+.btn-conversation:focus-visible::before {
+  opacity: 1;
+}
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, #38bdf8, #22d3ee, #a855f7, #f472b6, #38bdf8);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  animation: rainbow-orbit 6s linear infinite;
+  z-index: -2;
+}
+
+.contact-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: rgba(15, 23, 42, 0.08);
+  z-index: -1;
+  transition: background-color 0.4s ease;
+}
+
+.dark .contact-card::after {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.contact-card:hover::before,
+.contact-card:focus-within::before {
+  opacity: 1;
+}
+
+.contact-card:hover::after,
+.contact-card:focus-within::after {
+  background: rgba(15, 23, 42, 0.96);
+}
+
+@keyframes rainbow-orbit {
+  to {
+    transform: rotate(360deg);
   }
 }
