@@ -401,6 +401,11 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-100 via-white to-slate-50 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100">
       <header className="sticky top-0 z-40 border-b border-slate-200/60 bg-white/90 backdrop-blur dark:border-slate-800/70 dark:bg-slate-950/85">
+        <div className="bg-slate-900/95 text-xs font-medium tracking-wide text-white sm:text-sm">
+          <p className="mx-auto max-w-6xl px-4 py-2 text-center">
+            For the full interactive experience, view this site on a laptop or desktop.
+          </p>
+        </div>
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <Link href="#hero" className="text-lg font-semibold">
             Matthew Carbonell
