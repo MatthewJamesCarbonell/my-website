@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { AlertTriangle, Loader2, Send, Sparkles } from "lucide-react";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -81,13 +82,22 @@ export default function ContactForm() {
     status === "loading"
       ? "Sending…"
       : status === "success"
-        ? "Sent! 🎉"
+        ? "Sent!"
         : status === "error"
           ? "Try again"
-          : "Send";
+          : "Send message";
 
-  const buttonVariant = status === "success" ? "success" : status === "error" ? "destructive" : "default";
+  const buttonVariant = status === "success" ? "success" : status === "error" ? "destructive" : "cta";
   const buttonDisabled = status === "loading" || status === "success";
+
+  const buttonIcon =
+    status === "loading"
+      ? <Loader2 className="size-5 animate-spin" aria-hidden="true" />
+      : status === "success"
+        ? <Sparkles className="size-5 text-white drop-shadow" aria-hidden="true" />
+        : status === "error"
+          ? <AlertTriangle className="size-5" aria-hidden="true" />
+          : <Send className="size-5 transition-transform duration-300 ease-out group-hover:translate-x-1" aria-hidden="true" />;
 
   return (
     <form
@@ -115,9 +125,16 @@ export default function ContactForm() {
       <Button
         type="submit"
         variant={buttonVariant}
+        size="cta"
         disabled={buttonDisabled}
+        className="w-full md:w-auto"
       >
-        {buttonText}
+        <span className="flex items-center justify-center gap-2">
+          {buttonIcon}
+          <span aria-live="polite" aria-atomic="true">
+            {buttonText}
+          </span>
+        </span>
       </Button>
     </form>
   );
