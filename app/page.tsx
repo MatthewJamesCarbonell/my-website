@@ -414,7 +414,7 @@ export default function LandingPage() {
           </nav>
           <div className="hidden md:block pl-4">
             <Button size="sm" variant="outline" className="btn-conversation" asChild>
-              <Link href="#contact">Let's Connect</Link>
+              <Link href="#contact">Let&apos;s Connect</Link>
             </Button>
           </div>
         </div>
@@ -518,7 +518,7 @@ export default function LandingPage() {
             <div className="mx-auto max-w-xl text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl dark:text-white">About Me</h2>
               <p className="mt-6 text-base leading-relaxed text-slate-700 md:text-lg dark:text-slate-300">
-                I'm Matthew James Carbonell, a strategist who lives at the intersection of advocacy, communication,
+                I&apos;m Matthew James Carbonell, a strategist who lives at the intersection of advocacy, communication,
                 and crisis leadership. From donor family support in critical care to courtroom mediation and executive
                 coordination, I translate high-stakes moments into action plans that keep teams aligned and missions moving.
               </p>
@@ -816,7 +816,7 @@ export default function LandingPage() {
               {socialProof.map((item) => (
                 <Card key={item.name} className={`${interactiveCardClass} bg-white/95 dark:bg-slate-900/70`}>
                   <CardContent className="flex h-full flex-col gap-6 p-6">
-                    <p className="text-sm text-slate-600 dark:text-slate-300">"{item.quote}"</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-300">&ldquo;{item.quote}&rdquo;</p>
                     <div>
                       <p className="text-sm font-semibold text-slate-900 dark:text-white">{item.name}</p>
                       <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{item.title}</p>
@@ -836,9 +836,9 @@ export default function LandingPage() {
               className="contact-card relative z-[1] mx-auto grid max-w-3xl gap-6 rounded-3xl border border-slate-200/70 bg-white/95 p-6 shadow-xl backdrop-blur transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl md:grid-cols-3 md:p-10 dark:border-slate-700/70 dark:bg-slate-900/85"
             >
               <div className="space-y-3 md:col-span-1">
-                <h3 className="text-xl font-semibold">Let's talk</h3>
+                <h3 className="text-xl font-semibold">Let&apos;s talk</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">
-                  Have questions? Send a message and I'll get back to you soon.
+                  Have questions? Send a message and I&apos;ll get back to you soon.
                 </p>
                 <div className="space-y-1 text-sm text-slate-600 dark:text-slate-300">
                   <p><span className="font-semibold">Email:</span> matthewjamescarbonell@gmail.com</p>
