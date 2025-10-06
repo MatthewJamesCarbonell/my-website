@@ -598,21 +598,21 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="experience" className="border-t border-slate-200/60 py-20 dark:border-slate-800/70">
+        <section id="experience" className="border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#151920]">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
               <h2 className="text-3xl font-bold sm:text-4xl">Selected experience</h2>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-600 dark:text-[#c5ccd9]">
                 A sample of roles that shaped my approach to advocacy, strategy, and mediation.
               </p>
             </div>
-            <div className="space-y-6 border-l border-slate-200 pl-6 dark:border-slate-800 md:pl-10">
+            <div className="space-y-6 border-l border-slate-200 pl-6 dark:border-[#2f3642] md:pl-10">
               {experience.map((item) => (
                 <div key={item.role} className="group relative pl-6">
-                  <span className="absolute left-[-13px] top-2 inline-flex size-3 rounded-full border-2 border-white bg-slate-900 dark:border-slate-900 dark:bg-white" aria-hidden />
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{item.role}</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">{item.org} - {item.dates}</p>
-                  <p className="mt-2 text-sm text-slate-600 transition-all duration-200 dark:text-slate-300 md:opacity-0 md:-translate-y-1 md:group-hover:translate-y-0 md:group-hover:opacity-100">{item.summary}</p>
+                  <span className="absolute left-[-13px] top-2 inline-flex size-3 rounded-full border-2 border-white bg-slate-900 dark:border-[#151920] dark:bg-white" aria-hidden />
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-[#f3f5f9]">{item.role}</h3>
+                  <p className="text-sm text-slate-500 dark:text-[#8b94a6]">{item.org} - {item.dates}</p>
+                  <p className="mt-2 text-sm text-slate-600 transition-all duration-200 dark:text-[#c5ccd9] md:opacity-0 md:-translate-y-1 md:group-hover:translate-y-0 md:group-hover:opacity-100">{item.summary}</p>
                 </div>
               ))}
             </div>
