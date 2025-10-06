@@ -620,7 +620,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="education" className="border-t border-slate-200/60 bg-gradient-to-br from-white via-white to-slate-100 py-20 dark:border-slate-800/70 dark:bg-slate-950">
+        <section id="education" className="border-t border-slate-200/60 bg-white py-20 dark:border-slate-800/70 dark:bg-slate-950">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
               <h2 className="text-3xl font-bold sm:text-4xl">Education</h2>
