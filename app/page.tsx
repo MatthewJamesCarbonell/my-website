@@ -620,11 +620,11 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="education" className="border-t border-slate-200/60 bg-white py-20 dark:border-slate-800/70 dark:bg-slate-950">
+        <section id="education" className="border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#10141b]">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
               <h2 className="text-3xl font-bold sm:text-4xl">Education</h2>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-600 dark:text-[#9eaac0]">
                 Academic foundations that fuel a balanced lens on law, policy, and human-centered advocacy.
               </p>
             </div>
@@ -632,7 +632,7 @@ export default function LandingPage() {
               {education.map((item) => (
                 <Card
                   key={item.program}
-                  className={`${interactiveCardClass} border-slate-200/80 bg-white/75 text-slate-900 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/70 dark:text-slate-100`}
+                  className={`${interactiveCardClass} border-slate-200/80 bg-white/75 text-slate-900 shadow-lg backdrop-blur-sm dark:border-[#2c333f] dark:bg-[#171c24] dark:text-slate-100`}
                 >
                   <CardHeader className="space-y-1">
                     <CardTitle>{item.program}</CardTitle>
@@ -643,7 +643,7 @@ export default function LandingPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                    <ul className="space-y-2 text-sm text-slate-600 dark:text-[#b8c1d3]">
                       {item.notes.map((note) => (
                         <li key={note}>- {note}</li>
                       ))}
