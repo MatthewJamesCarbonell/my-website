@@ -544,11 +544,11 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="features" className="border-t border-slate-200/60 bg-white py-20 dark:border-slate-800/70 dark:bg-slate-950">
+        <section id="features" className="border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#10141b]">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
               <h2 className="text-3xl font-bold sm:text-4xl">Where I create the most impact</h2>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-600 dark:text-[#9eaac0]">
                 Blending legal training, communication, and design thinking to move missions forward.
               </p>
             </div>
@@ -558,7 +558,7 @@ export default function LandingPage() {
                 return (
                   <Card
                     key={item.title}
-                    className={`${interactiveCardClass} border-slate-200/80 bg-white/75 text-slate-900 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/70 dark:text-slate-100`}
+                    className={`${interactiveCardClass} border-slate-200/80 bg-white/75 text-slate-900 shadow-lg backdrop-blur-sm dark:border-[#2c333f] dark:bg-[#171c24] dark:text-slate-100`}
                   >
                     <CardHeader className="flex flex-col items-center gap-3 text-center md:items-start md:text-left">
                       <span className="flex size-12 items-center justify-center rounded-full bg-slate-100 text-slate-900 shadow-md transition-colors group-hover:bg-blue-500 group-hover:text-white dark:bg-white/15 dark:text-white">
@@ -567,7 +567,7 @@ export default function LandingPage() {
                       <CardTitle>{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-200/95 dark:text-slate-200">{item.body}</p>
+                      <p className="text-sm text-slate-200/95 dark:text-[#b8c1d3]">{item.body}</p>
                     </CardContent>
                   </Card>
                 );
@@ -579,7 +579,7 @@ export default function LandingPage() {
                 return (
                   <Card
                     key={item.heading}
-                    className={`${interactiveCardClass} border-slate-200/80 bg-white/75 text-slate-900 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/70 dark:text-slate-100`}
+                    className={`${interactiveCardClass} border-slate-200/80 bg-white/75 text-slate-900 shadow-lg backdrop-blur-sm dark:border-[#2c333f] dark:bg-[#171c24] dark:text-slate-100`}
                   >
                     <CardHeader className="flex flex-col items-center gap-3 text-center md:items-start md:text-left">
                       <span className="flex size-12 items-center justify-center rounded-full bg-slate-100 text-slate-900 shadow-md transition-colors group-hover:bg-blue-500 group-hover:text-white dark:bg-white/15 dark:text-white">
@@ -588,7 +588,7 @@ export default function LandingPage() {
                       <CardTitle>{item.heading}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-200/95 dark:text-slate-200">{item.blurb}</p>
+                      <p className="text-sm text-slate-200/95 dark:text-[#b8c1d3]">{item.blurb}</p>
                     </CardContent>
                   </Card>
                 );
