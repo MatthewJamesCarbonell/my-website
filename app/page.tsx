@@ -481,7 +481,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="about" className="border-y border-slate-200/60 bg-white/75 py-20 text-slate-900 backdrop-blur-sm dark:border-slate-800/70 dark:bg-slate-900/70 dark:text-slate-100">
+        <section id="about" className="border-y border-slate-200/60 bg-white/75 py-20 text-slate-900 backdrop-blur-sm dark:border-[#272c35] dark:bg-[#151920] dark:text-slate-100">
           <div className="mx-auto flex max-w-5xl flex-col gap-12 px-4 md:flex-row md:items-center">
             <div
               className="group mx-auto w-full max-w-xs"
@@ -525,12 +525,12 @@ export default function LandingPage() {
             </div>
             <div className="mx-auto max-w-xl text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl dark:text-white">About Me</h2>
-              <p className="mt-6 text-base leading-relaxed text-slate-700 md:text-lg dark:text-slate-300">
+              <p className="mt-6 text-base leading-relaxed text-slate-700 md:text-lg dark:text-[#c5ccd9]">
                 I&apos;m Matthew James Carbonell, a strategist who lives at the intersection of advocacy, communication,
                 and crisis leadership. From donor family support in critical care to courtroom mediation and executive
                 coordination, I translate high-stakes moments into action plans that keep teams aligned and missions moving.
               </p>
-              <p className="mt-6 text-base leading-relaxed text-slate-700 md:text-lg dark:text-slate-300">
+              <p className="mt-6 text-base leading-relaxed text-slate-700 md:text-lg dark:text-[#c5ccd9]">
                 I thrive where enterprise meets empathy&mdash;turning conflict into resolution, reinforcing systems that
                 endure, and building relationships that matter across healthcare, legal, and civic arenas.
               </p>
