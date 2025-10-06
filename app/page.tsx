@@ -399,7 +399,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-100 via-white to-slate-50 text-slate-900 dark:from-[#1b1f26] dark:via-[#161a21] dark:to-[#11141a] dark:text-neutral-100">
+    <div className="min-h-screen bg-gradient-to-b from-slate-100 via-white to-slate-50 text-slate-900 dark:from-[#10141b] dark:via-[#10141b] dark:to-[#10141b] dark:text-neutral-100">
       <header className="sticky top-0 z-40 border-b border-slate-200/60 bg-white/90 backdrop-blur dark:border-slate-800/70 dark:bg-slate-950/85">
         <div className="bg-slate-900/95 text-xs font-medium tracking-wide text-white sm:text-sm">
           <p className="mx-auto max-w-6xl px-4 py-2 text-center">
@@ -428,7 +428,7 @@ export default function LandingPage() {
       <main>
         <section
           id="hero"
-          className="relative overflow-hidden bg-gradient-to-b from-white/70 via-white/40 to-white/10 dark:from-[#1d2128] dark:via-[#191d24] dark:to-[#14171d]"
+          className="relative overflow-hidden bg-gradient-to-b from-white/70 via-white/40 to-white/10 dark:from-[#10141b] dark:via-[#10141b] dark:to-[#10141b]"
         >
           <div className="mx-auto max-w-5xl px-4 py-20 md:py-28">
             <div className="space-y-10">
