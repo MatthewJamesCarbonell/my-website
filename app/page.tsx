@@ -439,7 +439,7 @@ export default function LandingPage() {
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                   Transforming crisis into consensus.
                 </h1>
-                <p className="max-w-2xl text-lg text-slate-600 dark:text-neutral-300">
+                <p className="max-w-2xl text-lg text-slate-600 dark:text-[#8fa2c6]">
                   I guide organizations through high-stakes moments with clarity, decisive negotiation, and human-centered outcomes that endure.
                 </p>
                 <SectionCta align="start" className="mt-4" />
