@@ -399,7 +399,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-100 via-white to-slate-50 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100">
+    <div className="min-h-screen bg-gradient-to-b from-slate-100 via-white to-slate-50 text-slate-900 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 dark:text-neutral-100">
       <header className="sticky top-0 z-40 border-b border-slate-200/60 bg-white/90 backdrop-blur dark:border-slate-800/70 dark:bg-slate-950/85">
         <div className="bg-slate-900/95 text-xs font-medium tracking-wide text-white sm:text-sm">
           <p className="mx-auto max-w-6xl px-4 py-2 text-center">
@@ -426,17 +426,20 @@ export default function LandingPage() {
       </header>
 
       <main>
-        <section id="hero" className="relative overflow-hidden">
+        <section
+          id="hero"
+          className="relative overflow-hidden bg-gradient-to-b from-white/70 via-white/40 to-white/10 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950"
+        >
           <div className="mx-auto max-w-5xl px-4 py-20 md:py-28">
             <div className="space-y-10">
               <div className="space-y-6">
-                <p className="inline-flex flex-wrap items-center gap-2 text-sm font-semibold tracking-wide text-slate-600 dark:text-slate-300">
+                <p className="inline-flex flex-wrap items-center gap-2 text-sm font-semibold tracking-wide text-slate-600 dark:text-neutral-300">
                   Crisis Negotiator | Strategic Advocate | Trusted County Mediator
                 </p>
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                   Transforming crisis into consensus.
                 </h1>
-                <p className="max-w-2xl text-lg text-slate-600 dark:text-slate-300">
+                <p className="max-w-2xl text-lg text-slate-600 dark:text-neutral-300">
                   I guide organizations through high-stakes moments with clarity, decisive negotiation, and human-centered outcomes that endure.
                 </p>
                 <SectionCta align="start" className="mt-4" />
@@ -446,12 +449,12 @@ export default function LandingPage() {
                 {differentiators.map((item) => (
                   <Card
                     key={item.title}
-                    className={`${interactiveCardClass} border-white/70 bg-white/95 backdrop-blur dark:border-slate-800/60`}
+                    className={`${interactiveCardClass} border-white/70 bg-white/95 backdrop-blur dark:border-neutral-800/60 dark:bg-neutral-900/70`}
                   >
                     <CardHeader className="pb-2">
                       <CardTitle className="text-base">{item.title}</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                    <CardContent className="space-y-3 text-sm text-slate-600 dark:text-neutral-300">
                       <p>{item.description}</p>
                       <p className="font-semibold text-slate-900 dark:text-white">{item.metric}</p>
                     </CardContent>
@@ -459,14 +462,14 @@ export default function LandingPage() {
                 ))}
               </div>
 
-              <Card className="card-pulse core-strengths-card rounded-3xl border-transparent bg-gradient-to-br from-slate-800 via-slate-900 to-black text-white shadow-2xl">
+              <Card className="card-pulse core-strengths-card rounded-3xl border-transparent bg-gradient-to-br from-neutral-900 via-neutral-950 to-black text-white shadow-2xl">
                 <CardHeader>
                   <CardTitle className="text-2xl">Core Strengths</CardTitle>
-                  <CardDescription className="text-slate-300">
+                  <CardDescription className="text-neutral-300">
                     High-trust relationships, decisive communication, and strategy under pressure.
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4 text-sm text-slate-200">
+                <CardContent className="space-y-4 text-sm text-neutral-200">
                   <ul className="space-y-2">
                     <li>- Crisis navigation for healthcare, legal, and community stakeholders</li>
                     <li>- Negotiation frameworks grounded in empathy and measurable outcomes</li>
