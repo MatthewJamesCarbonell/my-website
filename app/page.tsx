@@ -433,7 +433,7 @@ export default function LandingPage() {
           <div className="mx-auto max-w-5xl px-4 py-20 md:py-28">
             <div className="space-y-10">
               <div className="space-y-6">
-                <p className="inline-flex flex-wrap items-center gap-2 text-sm font-semibold tracking-wide text-slate-600 dark:text-neutral-300">
+                <p className="inline-flex flex-wrap items-center gap-2 text-sm font-semibold tracking-wide text-slate-600 dark:text-[#8fa2c6]">
                   Crisis Negotiator | Strategic Advocate | Trusted County Mediator
                 </p>
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
@@ -449,7 +449,7 @@ export default function LandingPage() {
                 {differentiators.map((item) => (
                   <Card
                     key={item.title}
-                    className={`${interactiveCardClass} border-white/70 bg-white/95 backdrop-blur dark:border-neutral-800/70 dark:bg-[#1f242c]`}
+                    className={`${interactiveCardClass} border-white/70 bg-white/95 backdrop-blur dark:border-[#2b323d] dark:bg-[#1a1f27]`}
                   >
                     <CardHeader className="pb-2">
                       <CardTitle className="text-base">{item.title}</CardTitle>
