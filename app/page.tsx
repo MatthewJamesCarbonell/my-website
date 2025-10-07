@@ -805,7 +805,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="contact" className="border-t border-slate-200/60 bg-white py-20 dark:border-slate-800/70 dark:bg-slate-950">
+        <section id="contact" className="border-t border-slate-200/60 bg-slate-50 py-20 dark:border-[#272c35] dark:bg-[#151920]">
           <div className="mx-auto max-w-6xl px-4">
             <div
               id="contact-card"
