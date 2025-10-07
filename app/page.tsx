@@ -756,7 +756,7 @@ export default function LandingPage() {
 
         <section
           id="leadership"
-          className="border-t border-slate-200/60 bg-gradient-to-br from-white via-slate-50 to-white py-20 dark:border-slate-800/70 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+          className="border-t border-slate-200/60 bg-slate-50 py-20 dark:border-[#272c35] dark:bg-[#151920]"
         >
           <div className="mx-auto max-w-7xl px-4 md:py-4">
             <div className="mx-auto max-w-3xl text-center">
