@@ -222,8 +222,17 @@
 .social-card:hover,
 .social-card:focus-visible,
 .social-card:focus-within {
+  background: color-mix(in srgb, var(--card-glow, rgba(148, 163, 184, 0.45)) 18%, rgba(248, 250, 252, 0.98));
   box-shadow: 0 0 0 1px var(--card-glow, rgba(148, 163, 184, 0.5)),
-    0 26px 58px -22px var(--card-glow, rgba(148, 163, 184, 0.45));
+    0 0 35px -10px var(--card-glow, rgba(148, 163, 184, 0.38)),
+    0 24px 60px -24px var(--card-glow, rgba(148, 163, 184, 0.42));
+  transform: translateY(-4px);
+}
+
+.dark .social-card:hover,
+.dark .social-card:focus-visible,
+.dark .social-card:focus-within {
+  background: color-mix(in srgb, var(--card-glow, rgba(148, 163, 184, 0.4)) 22%, rgba(15, 19, 28, 0.95));
 }
 
 .photo-stack {
