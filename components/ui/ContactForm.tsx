@@ -111,14 +111,25 @@ export default function ContactForm() {
       <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <div className="grid gap-3 md:grid-cols-2">
-        <Input name="name" placeholder="Your name" required />
-        <Input name="email" type="email" placeholder="Email" required />
+        <Input
+          name="name"
+          placeholder="Your name"
+          required
+          className="border border-slate-200/80 bg-white/90 dark:border-[#2f3642] dark:bg-[#1a1f27]"
+        />
+        <Input
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+          className="border border-slate-200/80 bg-white/90 dark:border-[#2f3642] dark:bg-[#1a1f27]"
+        />
       </div>
 
       <textarea
         name="message"
         placeholder="Message"
-        className="h-28 w-full rounded-md border border-slate-200 p-2 outline-none focus:ring-2"
+        className="h-28 w-full rounded-md border border-slate-200/80 bg-white/90 p-2 outline-none focus:ring-2 dark:border-[#2f3642] dark:bg-[#1a1f27]"
         required
       />
 
