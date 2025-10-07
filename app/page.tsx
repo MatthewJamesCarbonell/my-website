@@ -436,7 +436,7 @@ export default function LandingPage() {
                 <p className="max-w-2xl text-lg text-slate-600 dark:text-[#8fa2c6]">
                   I guide organizations through high-stakes moments with clarity, decisive negotiation, and human-centered outcomes that endure.
                 </p>
-                <SectionCta align="start" className="mt-4" />
+                <SectionCta align="start" className="mt-6" pulseSchedule={ctaGlow} />
               </div>
 
               <div className="grid gap-6 sm:grid-cols-3">
