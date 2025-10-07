@@ -315,9 +315,6 @@ const socials = [
 const interactiveCardClass =
   "group card-pulse h-full rounded-3xl border border-slate-200/80 bg-slate-50/90 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800/60 dark:bg-slate-900/70";
 
-const gradientCardBase =
-  "group flex min-h-[220px] flex-col justify-center rounded-3xl border-transparent text-white shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl";
-
 type SectionCtaProps = {
   align?: "center" | "start";
   className?: string;
@@ -783,49 +780,6 @@ export default function LandingPage() {
             <SectionCta className="mt-12" />
           </div>
         </section>
-
-        <section
-          id="gallery"
-          className="border-y border-slate-200/60 bg-gradient-to-br from-white via-amber-50/70 to-rose-50/70 py-20 text-slate-900 dark:border-slate-800/70 dark:bg-gradient-to-br dark:from-slate-950 dark:via-rose-950/60 dark:to-amber-950/60 dark:text-slate-100"
-        >
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="mb-12 max-w-2xl space-y-4">
-              <h2 className="text-3xl font-bold sm:text-4xl">Spotlight moments</h2>
-              <p className="text-slate-600 dark:text-slate-200">
-                Highlights and artifacts that show how I work and partner with teams.
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              <Card className={`${gradientCardBase} bg-gradient-to-br from-rose-500/85 to-amber-500/80`}
-              >
-                <CardHeader className="flex h-full flex-col items-center justify-center gap-3 text-center">
-                  <CardTitle className="text-2xl font-semibold text-white">Winning hearts & minds</CardTitle>
-                  <CardDescription className="max-w-xs text-base text-rose-50/95">
-                    Toastmasters recruitment campaigns that doubled club membership through storytelling and community rituals.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className={`${gradientCardBase} bg-gradient-to-br from-blue-600/85 to-indigo-700/80`}>
-                <CardHeader className="flex h-full flex-col items-center justify-center gap-3 text-center">
-                  <CardTitle className="text-2xl font-semibold text-white">Briefs that inspire action</CardTitle>
-                  <CardDescription className="max-w-xs text-base text-blue-50/95">
-                    Strategic decks and legal briefs that distill research into clear paths forward for executives and mediators alike.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className={`${gradientCardBase} bg-gradient-to-br from-emerald-500/85 to-teal-600/80`}>
-                <CardHeader className="flex h-full flex-col items-center justify-center gap-3 text-center">
-                  <CardTitle className="text-2xl font-semibold text-white">Community impact</CardTitle>
-                  <CardDescription className="max-w-xs text-base text-emerald-50/95">
-                    Guardian ad Litem service, coordinating multidisciplinary teams to protect children and families in crisis.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <SectionCta className="mt-12" />
-          </div>
-        </section>
-
         <section id="testimonials" className="py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
