@@ -328,16 +328,24 @@ type SectionCtaProps = {
   align?: "center" | "start";
   className?: string;
   pulseSchedule?: boolean;
+  buttonTone?: "default" | "slate";
 };
 
-function SectionCta({ align = "center", className, pulseSchedule = false }: SectionCtaProps) {
+function SectionCta({ align = "center", className, pulseSchedule = false, buttonTone = "default" }: SectionCtaProps) {
   const base = align === "start" ? "justify-center md:justify-start" : "justify-center";
   const combined = ["flex flex-wrap gap-3", base, className].filter(Boolean).join(" ");
-  const conversationClasses = ["btn-conversation", pulseSchedule ? "animate-[pulse_1.6s_ease-in-out_1]" : ""].filter(Boolean).join(" ");
+  const resumeClasses = ["btn-resume", buttonTone === "slate" ? "btn-dark-slate" : ""].filter(Boolean).join(" ");
+  const conversationClasses = [
+    "btn-conversation",
+    buttonTone === "slate" ? "btn-dark-slate" : "",
+    pulseSchedule ? "animate-[pulse_1.6s_ease-in-out_1]" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div className={combined}>
-      <Button size="lg" className="btn-resume" asChild>
+      <Button size="lg" className={resumeClasses} asChild>
         <Link href="/Matthew-Carbonell-Resume.pdf" target="_blank" rel="noopener">
           View Resume
         </Link>
@@ -594,7 +602,7 @@ export default function LandingPage() {
                 );
               })}
             </div>
-            <SectionCta className="mt-12" />
+            <SectionCta className="mt-12" buttonTone="slate" />
           </div>
         </section>
 
@@ -652,15 +660,15 @@ export default function LandingPage() {
                 </Card>
               ))}
             </div>
-            <SectionCta className="mt-12" />
+            <SectionCta className="mt-12" buttonTone="slate" />
           </div>
         </section>
 
-        <section id="skills" className="border-t border-slate-200/60 bg-slate-50 py-20 dark:border-slate-800/70 dark:bg-slate-950">
+        <section id="skills" className="border-t border-slate-200/60 bg-slate-50 py-20 dark:border-[#272c35] dark:bg-[#151920]">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
               <h2 className="text-3xl font-bold sm:text-4xl">Skills</h2>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-600 dark:text-[#c5ccd9]">
                 A snapshot of the capabilities I bring into negotiations, strategic planning sessions, and community work.
               </p>
             </div>
@@ -668,15 +676,15 @@ export default function LandingPage() {
               {skills.map((group) => (
                 <Card
                   key={group.category}
-                  className={`${interactiveCardClass} border-slate-200/80 bg-white/70 text-slate-900 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/70 dark:text-slate-100`}
+                  className={`${interactiveCardClass} border-slate-200/80 bg-white/70 text-slate-900 shadow-lg backdrop-blur-sm dark:border-[#2f3642] dark:bg-[#1a1f27] dark:text-slate-100`}
                 >
                   <CardHeader>
                     <CardTitle>{group.category}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                    <ul className="space-y-2 text-sm text-slate-600 dark:text-[#c5ccd9]">
                       {group.bullets.map((bullet) => (
-                        <li key={bullet}>- {bullet}</li>
+                    <li key={bullet}>- {bullet}</li>
                       ))}
                     </ul>
                   </CardContent>
@@ -703,9 +711,12 @@ export default function LandingPage() {
                 const Icon = social.icon;
                 const isExternal = social.href.startsWith("http");
 
+                const darkBase = social.isHours
+                  ? "dark:border-[#2f3642] dark:bg-[#1a1f27]"
+                  : "dark:border-[#2f3642] dark:bg-[#1a1f27]";
                 const defaultBase = social.isHours
-                  ? "group card-pulse relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-slate-100/90 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700/60 dark:bg-slate-800/70"
-                  : "group card-pulse relative flex items-center gap-4 rounded-2xl border border-slate-200/70 bg-white/95 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800/60 dark:bg-slate-900/70";
+                  ? `group card-pulse relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-slate-100/90 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800/70 ${darkBase}`
+                  : `group card-pulse relative flex items-center gap-4 rounded-2xl border border-slate-200/70 bg-white/95 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900/70 ${darkBase}`;
 
                 const baseClasses = `${defaultBase} ${social.cardClass || ""}`.trim();
 
