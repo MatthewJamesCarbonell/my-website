@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "@/components/ui/ContactForm";
@@ -260,8 +260,7 @@ const socials = [
     href: "https://www.linkedin.com/in/matthew-carbonell-a73b1b230",
     value: "linkedin.com/in/matthew-carbonell-a73b1b230",
     icon: Linkedin,
-    cardClass:
-      "bg-gradient-to-br from-sky-50/80 via-white to-white dark:from-slate-900/80 dark:via-slate-900/60 dark:to-slate-900",
+    glow: "rgba(10, 102, 194, 0.55)",
     iconClass: "bg-[#0A66C2] text-white",
     hoverTextClass: "group-hover:text-[#0A66C2]",
   },
@@ -270,8 +269,7 @@ const socials = [
     href: "https://www.instagram.com/matthewjamescarbonell?igsh=MXEzYjQ4bTV2NndrYg%3D%3D&utm_source=qr",
     value: "@matthewjamescarbonell",
     icon: Instagram,
-    cardClass:
-      "bg-gradient-to-br from-rose-50/80 via-white to-white dark:from-slate-900/80 dark:via-slate-900/60 dark:to-slate-900",
+    glow: "rgba(221, 42, 123, 0.52)",
     iconClass: "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white",
     hoverTextClass: "group-hover:text-[#DD2A7B]",
   },
@@ -280,8 +278,7 @@ const socials = [
     href: "https://profile.indeed.com/p/matthewc-chbvs4s",
     value: "indeed.com/p/matthewc-chbvs4s",
     icon: BriefcaseBusiness,
-    cardClass:
-      "bg-gradient-to-br from-indigo-50/80 via-white to-white dark:from-slate-900/80 dark:via-slate-900/60 dark:to-slate-900",
+    glow: "rgba(0, 58, 155, 0.5)",
     iconClass: "bg-[#003A9B] text-white",
     hoverTextClass: "group-hover:text-[#003A9B]",
   },
@@ -290,8 +287,7 @@ const socials = [
     href: "mailto:matthewjamescarbonell@gmail.com",
     value: "matthewjamescarbonell@gmail.com",
     icon: Mail,
-    cardClass:
-      "bg-gradient-to-br from-emerald-50/80 via-white to-white dark:from-slate-900/80 dark:via-slate-900/60 dark:to-slate-900",
+    glow: "rgba(16, 185, 129, 0.5)",
     iconClass: "bg-emerald-500 text-white",
     hoverTextClass: "group-hover:text-emerald-600",
   },
@@ -300,8 +296,7 @@ const socials = [
     href: "tel:13057643999",
     value: "305-764-3999",
     icon: Phone,
-    cardClass:
-      "bg-gradient-to-br from-amber-50/80 via-white to-white dark:from-slate-900/80 dark:via-slate-900/60 dark:to-slate-900",
+    glow: "rgba(245, 158, 11, 0.52)",
     iconClass: "bg-amber-500 text-white",
     hoverTextClass: "group-hover:text-amber-600",
   },
@@ -311,8 +306,7 @@ const socials = [
     value: "7 AM - 8 PM, Monday - Friday",
     icon: Clock,
     isHours: true,
-    cardClass:
-      "bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-slate-900/80 dark:via-slate-900/60 dark:to-slate-900",
+    glow: "rgba(56, 189, 248, 0.42)",
     iconClass: "bg-blue-500 text-white dark:bg-blue-400",
     hoverTextClass: "",
   },
@@ -711,14 +705,19 @@ export default function LandingPage() {
                 const Icon = social.icon;
                 const isExternal = social.href.startsWith("http");
 
-                const darkBase = social.isHours
-                  ? "dark:border-[#2f3642] dark:bg-[#1a1f27]"
-                  : "dark:border-[#2f3642] dark:bg-[#1a1f27]";
-                const defaultBase = social.isHours
-                  ? `group card-pulse relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-slate-100/90 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800/70 ${darkBase}`
-                  : `group card-pulse relative flex items-center gap-4 rounded-2xl border border-slate-200/70 bg-white/95 p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900/70 ${darkBase}`;
+                const baseClasses = [
+                  "group social-card relative flex items-center gap-4 rounded-2xl border p-5 shadow-sm transition-transform duration-300 hover:-translate-y-1",
+                  social.isHours
+                    ? "border-slate-200/80 bg-slate-100/90"
+                    : "border-slate-200/70 bg-white/95",
+                  "dark:border-[#2f3642] dark:bg-[#1a1f27]",
+                ]
+                  .filter(Boolean)
+                  .join(" ");
 
-                const baseClasses = `${defaultBase} ${social.cardClass || ""}`.trim();
+                const glowStyle = social.glow
+                  ? ({ "--card-glow": social.glow } as CSSProperties)
+                  : undefined;
 
                 const iconClass =
                   social.iconClass ||
@@ -736,6 +735,7 @@ export default function LandingPage() {
                     rel={isExternal ? "noopener" : undefined}
                     className={baseClasses}
                     aria-label={social.label}
+                    style={glowStyle}
                   >
                     <span className={`flex size-12 items-center justify-center rounded-xl shadow-md transition-colors ${iconClass}`}>
                       <Icon className="size-5" />

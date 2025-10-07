@@ -205,6 +205,33 @@
   opacity: 1;
 }
 
+.social-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(248, 250, 252, 0.92);
+  color: inherit;
+}
+
+.dark .social-card {
+  background: rgba(41, 46, 58, 0.88);
+}
+
+.social-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease, box-shadow 0.35s ease;
+}
+
+.social-card:hover::after,
+.social-card:focus-within::after {
+  opacity: 1;
+  box-shadow: 0 0 40px var(--card-glow, rgba(148, 163, 184, 0.55));
+}
+
 .photo-stack {
   position: relative;
   border-radius: 1.75rem;
