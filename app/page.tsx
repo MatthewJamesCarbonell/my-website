@@ -764,7 +764,10 @@ export default function LandingPage() {
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {leadershipRoles.map((item) => (
-                <Card key={item.title} className={interactiveCardClass}>
+                <Card
+                  key={item.title}
+                  className={`${interactiveCardClass} dark:border-[#2f3642] dark:bg-[#1a1f27]`}
+                >
                   <CardHeader>
                     <CardTitle>{item.title}</CardTitle>
                     <CardDescription>
