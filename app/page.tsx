@@ -697,12 +697,12 @@ export default function LandingPage() {
 
         <section
           id="connect"
-          className="border-t border-slate-200/60 bg-gradient-to-br from-white via-emerald-50/50 to-slate-50 py-20 dark:border-slate-800/70 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+          className="border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#10141b]"
         >
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
               <h2 className="text-3xl font-bold sm:text-4xl">Connect with me</h2>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-600 dark:text-[#9eaac0]">
                 Find the channel that fits best. I stay active across professional platforms, so reach out wherever is easiest for you.
               </p>
             </div>
