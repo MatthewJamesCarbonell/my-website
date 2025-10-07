@@ -132,25 +132,54 @@
 
 .btn-resume {
   position: relative;
-  border-radius: 0.875rem;
-  border: 1px solid rgba(10, 14, 24, 0.85) !important;
-  background: linear-gradient(185deg, rgba(3, 5, 12, 0.98), rgba(4, 6, 14, 0.96)) !important;
-  color: rgba(214, 222, 247, 0.95) !important;
-  transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.3s ease;
-  box-shadow: 0 26px 60px -28px rgba(3, 5, 12, 0.95);
+  border-radius: 1rem;
+  border: 1px solid rgba(100, 116, 139, 0.25) !important;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.12), rgba(148, 163, 184, 0.08)) !important;
+  color: rgba(15, 23, 42, 0.92) !important;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.35s ease, border-color 0.35s ease,
+    color 0.35s ease;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22), 0 18px 38px -24px rgba(15, 23, 42, 0.35);
 }
 
 .dark .btn-resume {
-  border-color: rgba(12, 16, 28, 0.88) !important;
-  background: linear-gradient(187deg, rgba(2, 4, 10, 0.99), rgba(4, 6, 14, 0.97)) !important;
-  box-shadow: 0 30px 68px -28px rgba(2, 4, 10, 0.9);
+  border-color: rgba(148, 163, 184, 0.28) !important;
+  color: rgba(226, 232, 240, 0.92) !important;
+  background: linear-gradient(170deg, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.42)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.24), 0 18px 44px -26px rgba(2, 6, 23, 0.6);
+}
+
+.btn-resume::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 120%, rgba(59, 130, 246, 0.0), rgba(59, 130, 246, 0.32));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
 }
 
 .btn-resume:hover,
 .btn-resume:focus-visible {
-  transform: translateY(-1px);
-  box-shadow: 0 34px 76px -28px rgba(70, 126, 255, 0.5);
-  background: linear-gradient(189deg, rgba(9, 16, 32, 0.98), rgba(12, 20, 40, 0.95)) !important;
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.85) !important;
+  color: rgba(15, 23, 42, 0.98) !important;
+  background: linear-gradient(175deg, rgba(255, 255, 255, 0.35), rgba(59, 130, 246, 0.45)) !important;
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.35), 0 0 38px rgba(59, 130, 246, 0.45), 0 28px 68px -24px rgba(37, 99, 235, 0.45);
+}
+
+.dark .btn-resume:hover,
+.dark .btn-resume:focus-visible {
+  color: rgba(233, 244, 255, 0.95) !important;
+  background: linear-gradient(175deg, rgba(30, 41, 59, 0.75), rgba(56, 189, 248, 0.32)) !important;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.4), 0 0 45px rgba(59, 130, 246, 0.45), 0 30px 70px -24px rgba(2, 132, 199, 0.5);
+}
+
+.btn-resume:hover::before,
+.btn-resume:focus-visible::before {
+  opacity: 1;
 }
 
 .btn-conversation {
