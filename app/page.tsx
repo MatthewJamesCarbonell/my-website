@@ -486,9 +486,9 @@ export default function LandingPage() {
         </section>
 
         <section id="about" className="border-y border-slate-200/60 bg-white/75 py-20 text-slate-900 backdrop-blur-sm dark:border-[#272c35] dark:bg-[#151920] dark:text-slate-100">
-          <div className="mx-auto flex max-w-5xl flex-col gap-12 px-4 md:flex-row md:items-center">
+          <div className="mx-auto flex max-w-5xl flex-col gap-16 px-4 md:flex-row md:items-center md:gap-12">
             <div
-              className="group mx-auto w-full max-w-xs"
+              className="group mx-auto w-full max-w-xs md:max-w-sm"
               role="button"
               tabIndex={0}
               onClick={rotatePhotos}
@@ -503,7 +503,8 @@ export default function LandingPage() {
                   const photo = aboutPhotos[photoIndex];
                   const depth = aboutPhotos.length - position;
                   const rotation = position === 0 ? 0 : position === 1 ? -4 : 4;
-                  const translate = position * 14;
+                  // Smaller translate offset on mobile to reduce stack height
+                  const translate = position * 8; // Reduced from 14 to 8
                   const topCardClasses =
                     position === 0
                       ? "group-hover:-translate-y-1 group-hover:scale-[1.01] group-hover:rotate-1"
