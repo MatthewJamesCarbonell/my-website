@@ -143,7 +143,15 @@ const education = [
     program: "Juris Doctor - J.D. Applicant",
     institution: "Nova Southeastern University Shepard Broad College of Law",
     dates: "Jun 2021 - Jan 2023",
-    notes: ["Law School 2L curriculum", "Focus on mediation and constitutional law"],
+    notes: [
+      "Law School 2L curriculum",
+      "Torts",
+      "Contracts",
+      "Legal Reasoning and Writing",
+      "Mediation",
+      "Constitutional Law",
+      "Criminal Law",
+    ],
   },
   {
     program: "Bachelor of Arts - Political Science",
@@ -303,8 +311,8 @@ const socials = [
   },
   {
     label: "Phone",
-    href: "tel:13057643999",
-    value: "305-764-3999",
+  href: "tel:13057642999",
+  value: "305-764-2999",
     icon: Phone,
     glow: "rgba(245, 158, 11, 0.52)",
     iconClass: "bg-amber-500 text-white",
@@ -824,7 +832,7 @@ export default function LandingPage() {
                 </p>
                 <div className="space-y-1 text-sm text-slate-600 dark:text-slate-300">
                   <p><span className="font-semibold">Email:</span> matthewjamescarbonell@gmail.com</p>
-                  <p><span className="font-semibold">Phone:</span> 305-766-3999</p>
+                  <p><span className="font-semibold">Phone:</span> 305-764-2999</p>
                 </div>
               </div>
               <div className="md:col-span-2">
