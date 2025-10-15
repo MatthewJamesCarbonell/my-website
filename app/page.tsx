@@ -143,7 +143,7 @@ const education = [
     program: "Juris Doctor - J.D. Applicant",
     institution: "Nova Southeastern University Shepard Broad College of Law",
     dates: "Jun 2021 - Jan 2023",
-    notes: ["Law School 2L curriculum", "Dean's List recognition", "Focus on mediation and constitutional law"],
+    notes: ["Law School 2L curriculum", "Focus on mediation and constitutional law"],
   },
   {
     program: "Bachelor of Arts - Political Science",
