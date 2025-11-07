@@ -343,7 +343,6 @@ type SectionCtaProps = {
 function SectionCta({ align = "center", className, pulseSchedule = false, buttonTone = "default" }: SectionCtaProps) {
   const base = align === "start" ? "justify-center md:justify-start" : "justify-center";
   const combined = ["flex flex-wrap gap-3", base, className].filter(Boolean).join(" ");
-  const resumeClasses = ["btn-resume", buttonTone === "slate" ? "btn-dark-slate" : ""].filter(Boolean).join(" ");
   const conversationClasses = [
     "btn-conversation",
     buttonTone === "slate" ? "btn-dark-slate" : "",
@@ -354,11 +353,6 @@ function SectionCta({ align = "center", className, pulseSchedule = false, button
 
   return (
     <div className={combined}>
-      <Button size="lg" className={resumeClasses} asChild>
-        <Link href="/Matthew-Carbonell-Resume.pdf" target="_blank" rel="noopener">
-          View Resume
-        </Link>
-      </Button>
       <Button size="lg" variant="outline" className={conversationClasses} asChild>
         <Link href="#contact">Schedule a conversation</Link>
       </Button>
