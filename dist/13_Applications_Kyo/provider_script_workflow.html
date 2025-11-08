@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Provider Partnership Script + CRM Workflow — Kyo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{ --accent:#009CA2; --ink:#111; --gray:#666; --muted:#7a7a7a; --rule:#009CA2; --line:#e5e7eb }
+    @page{ size:Letter; margin:0.6in 0.75in }
+    html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font:10.5pt/1.32 'Open Sans', Arial, Helvetica, sans-serif }
+    *{ box-sizing:border-box }
+    a{ color:#0b3b45; text-decoration:underline }
+
+    .top-rule{ height:2px; background:var(--rule); margin-bottom:8pt }
+    header{ display:grid; grid-template-columns:1fr auto; gap:14pt; align-items:center; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:10pt 0 12pt }
+    h1{ font:16pt/1.1 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; margin:0 0 2pt 0 }
+    .byline{ color:var(--gray); font:10pt/1.3 }
+    .contact{ text-align:right; color:var(--gray) }
+
+    h2{ font:12.5pt/1.15 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; color:var(--accent); margin:10pt 0 6pt; padding-bottom:3pt; border-bottom:1px solid #d9e6e8; letter-spacing:0.2px }
+    h3{ font:11pt/1.2 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#0b3b45; margin:8pt 0 4pt }
+    p{ margin:0 0 6pt }
+    ul{ margin:0 0 6pt 1em }
+    li{ margin:0 0 4pt }
+
+    .grid-2{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:16px; margin-top:8pt }
+    .card{ border:1px solid var(--line); border-radius:6px; padding:10pt }
+    .muted{ color:var(--gray) }
+
+    .mini-table{ width:100%; border-collapse:collapse; font-size:10pt }
+    .mini-table th, .mini-table td{ text-align:left; padding:6px 8px; border-bottom:1px solid #eef2f3 }
+    .mini-table th{ color:#0b3b45 }
+    .mini-table td:nth-child(4), .mini-table th:nth-child(4){ text-align:right; font-variant-numeric:tabular-nums }
+
+    .kpis{ width:100%; border-collapse:collapse; font-size:10pt }
+    .kpis th, .kpis td{ text-align:left; padding:6px 8px; border-bottom:1px solid #eef2f3 }
+    .kpis th:nth-child(3), .kpis td:nth-child(3){ text-align:right; font-variant-numeric:tabular-nums }
+
+    .flow{ width:100%; height:120px; border:1px solid #eef2f3; border-radius:6px; background:#fff }
+    .legend{ color:var(--muted); font-size:9.5pt; margin-top:4pt }
+
+    footer{ border-top:1px solid #999; color:#999; text-align:right; font:8.5pt/1.25 'Open Sans', Arial, Helvetica, sans-serif; margin-top:12pt; padding-top:6pt }
+  </style>
+</head>
+<body>
+  <div class="top-rule" aria-hidden="true"></div>
+  <header>
+    <div>
+      <h1>Provider Partnership Script + CRM Workflow</h1>
+      <div class="byline">(Prepared by Matthew James Carbonell | Community Engagement Manager Candidate)</div>
+    </div>
+    <div class="contact">
+      Miami, FL • <a href="mailto:matthewjamescarbonell@gmail.com">matthewjamescarbonell@gmail.com</a><br/>
+      <a href="https://matthewjamescarbonell.com" target="_blank" rel="noopener">matthewjamescarbonell.com</a> • 305‑764‑2999
+    </div>
+  </header>
+
+  <section>
+    <h2>Purpose</h2>
+    <p>Transform provider outreach from ad‑hoc conversation into a measurable referral system built on empathy, trust, and data discipline.</p>
+  </section>
+
+  <section class="grid-2">
+    <div class="card">
+      <h2>1️⃣ Sample Call Script — Pediatric / Diagnostic Partner</h2>
+      <p class="muted">Approx. 2–3 minutes • Tone: Warm, bilingual‑aware, professional. Goal: understand clinic priorities before presenting Kyo.</p>
+      <h3>Step 1 — Open (Empathy + Relevance)</h3>
+      <p>“Dr. _____, I’m Matthew with Kyo. I know many practices are balancing time and bandwidth while trying to help families get ABA services faster. My goal is to make that hand‑off effortless for your team and reassuring for parents.”</p>
+      <h3>Step 2 — Connect to Mission (Data + Impact)</h3>
+      <p>“On average, our partner clinics see families scheduled within 48 hours of referral, and we send short bilingual status updates so you always know where each family is in the process.”</p>
+      <h3>Step 3 — Invitation to Collaborate</h3>
+      <p>“I’d love to drop off a short bilingual packet and QR card so your staff can refer without PHI—just family consent info. What day this week works best for a 10‑minute walk‑through with your office manager?”</p>
+      <h3>Step 4 — Follow‑Up Commitment</h3>
+      <p>“I’ll email a one‑page summary afterward with our referral turnaround metrics and include my direct cell in case anything comes up.”</p>
+      <h3>Spanish variant (closing line)</h3>
+      <p>“Así su equipo puede ayudar a las familias sin demora y con total tranquilidad.” <span class="muted">(So your team can help families promptly and with full peace of mind.)</span></p>
+    </div>
+    <div class="card">
+      <h2>2️⃣ CRM Workflow — From Contact to Conversion</h2>
+      <svg class="flow" viewBox="0 0 760 160" role="img" aria-label="Contact to Conversion workflow diagram">
+        <defs>
+          <filter id="s" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#eaf6f7"/>
+          </filter>
+          <style>
+            .stage{ fill:#f3fbfc; stroke:#cdecee }
+            .label{ font: 12px 'Open Sans'; fill:#0b3b45 }
+            .arrow{ stroke: var(--accent); stroke-width:2; fill:none; marker-end:url(#m) }
+            .caption{ font: 10px 'Open Sans'; fill:#666 }
+          </style>
+          <marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#009CA2"/>
+          </marker>
+          <!-- simple icons: phone, calendar, form, clipboard, heart -->
+          <g id="i-phone"><path d="M3 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="none" stroke="#009CA2"/>
+            <path d="M5 4h4M5 7h6M5 10h5" stroke="#009CA2"/></g>
+          <g id="i-cal"><rect x="0.5" y="2" width="14" height="12" rx="2" ry="2" fill="none" stroke="#009CA2"/>
+            <path d="M0.5 6h14" stroke="#009CA2"/><path d="M4 1v4M11 1v4" stroke="#009CA2"/></g>
+          <g id="i-form"><rect x="1" y="1" width="12" height="14" rx="2" fill="none" stroke="#009CA2"/>
+            <path d="M4 5h6M4 8h6M4 11h4" stroke="#009CA2"/></g>
+          <g id="i-clip"><rect x="1" y="2" width="12" height="13" rx="2" fill="none" stroke="#009CA2"/>
+            <path d="M5 2.5h4a1 1 0 0 1 1 1V5H4V3.5a1 1 0 0 1 1-1z" fill="none" stroke="#009CA2"/></g>
+          <g id="i-heart"><path d="M8 14s-6-3.5-6-7a3.5 3.5 0 0 1 6-2 3.5 3.5 0 0 1 6 2c0 3.5-6 7-6 7z" fill="none" stroke="#009CA2"/></g>
+        </defs>
+        <!-- stages -->
+        <g transform="translate(10,50)">
+          <rect class="stage" x="0" y="0" width="130" height="40" rx="8" filter="url(#s)"/>
+          <text class="label" x="65" y="24" text-anchor="middle">CONTACT</text>
+        </g>
+        <g transform="translate(170,50)">
+          <rect class="stage" x="0" y="0" width="140" height="40" rx="8" filter="url(#s)"/>
+          <text class="label" x="70" y="24" text-anchor="middle">FOLLOW‑UP</text>
+        </g>
+        <g transform="translate(340,50)">
+          <rect class="stage" x="0" y="0" width="130" height="40" rx="8" filter="url(#s)"/>
+          <text class="label" x="65" y="24" text-anchor="middle">REFERRAL</text>
+        </g>
+        <g transform="translate(500,50)">
+          <rect class="stage" x="0" y="0" width="120" height="40" rx="8" filter="url(#s)"/>
+          <text class="label" x="60" y="24" text-anchor="middle">INTAKE</text>
+        </g>
+        <g transform="translate(640,50)">
+          <rect class="stage" x="0" y="0" width="120" height="40" rx="8" filter="url(#s)"/>
+          <text class="label" x="60" y="24" text-anchor="middle">CONVERSION</text>
+        </g>
+        <!-- arrows + icons -->
+        <path class="arrow" d="M140,70 L170,70"/>
+        <use href="#i-phone" x="146" y="78"/>
+        <path class="arrow" d="M310,70 L340,70"/>
+        <use href="#i-cal" x="312" y="78"/>
+        <path class="arrow" d="M470,70 L500,70"/>
+        <use href="#i-form" x="472" y="78"/>
+        <path class="arrow" d="M620,70 L640,70"/>
+        <use href="#i-clip" x="622" y="78"/>
+        <use href="#i-heart" x="744" y="14"/>
+        <!-- captions -->
+        <text class="caption" x="75" y="110" text-anchor="middle">Provider Identified</text>
+        <text class="caption" x="240" y="110" text-anchor="middle">Meeting / Call Logged</text>
+        <text class="caption" x="405" y="110" text-anchor="middle">Family Info (consent)</text>
+        <text class="caption" x="560" y="110" text-anchor="middle">Intake Scheduled</text>
+        <text class="caption" x="700" y="110" text-anchor="middle">ABA Services Begin</text>
+      </svg>
+      <div class="legend">Thin cyan arrows indicate handoffs; small icons (phone, calendar, form, clipboard, heart) mark action types.</div>
+      <table class="mini-table" role="table" aria-label="CRM workflow table" style="margin-top:8pt">
+        <thead>
+          <tr><th>Stage</th><th>Action Owner</th><th>System Field / Metric</th><th>SLA (Target)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Contact</td><td>Matthew</td><td>Provider Name, Role, Language</td><td>Log within 24 hrs of meeting</td></tr>
+          <tr><td>Follow‑Up</td><td>Matthew</td><td>Follow‑Up Date, Notes from Call</td><td>Completed within 2 business days</td></tr>
+          <tr><td>Referral</td><td>Provider</td><td>Referral Submitted (Y/N), Form Type</td><td>5 new providers per month</td></tr>
+          <tr><td>Intake</td><td>Intake Team</td><td>First‑Touch Time (hrs), Intake Date</td><td>≤ 48 hrs from referral</td></tr>
+          <tr><td>Conversion</td><td>BCBA Team</td><td>Intake → Treatment Start Ratio</td><td>≥ 40% within 60 days</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>3️⃣ Example KPI Snapshot</h2>
+    <table class="kpis" role="table" aria-label="KPI snapshot">
+      <thead>
+        <tr><th>Metric</th><th>Definition</th><th>Target / 60 Days</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>New Referring Clinics</td><td>Providers who sent ≥1 referral this month</td><td>5 per month</td><td>Matthew Carbonell</td></tr>
+        <tr><td>Referral Conversion Rate</td><td>Referrals → Intakes Started</td><td>40% in ≤ 60 days</td><td>Intake / Outreach Team</td></tr>
+        <tr><td>Avg. Response Time</td><td>Hours from referral → first contact</td><td>≤ 48 hrs</td><td>Intake Team</td></tr>
+        <tr><td>Provider Retention</td><td>Active referrers for ≥ 2 months</td><td>80% retained</td><td>Matthew Carbonell</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>System Tools + Audit Note</h2>
+    <ul>
+      <li><strong>CRM Platform:</strong> Salesforce Health Cloud or HubSpot CRM with custom ABA fields.</li>
+      <li><strong>Weekly Review:</strong> Every Friday → dashboard update + outlier analysis.</li>
+      <li><strong>Data Hygiene:</strong> All provider contacts tagged by ZIP + Language for territory mapping.</li>
+      <li><strong>Ethical Guardrails:</strong> No PHI stored pre‑intake; HIPAA compliant via consent‑based forms.</li>
+    </ul>
+  </section>
+
+  <footer>© Matthew James Carbonell — Community Engagement | matthewjamescarbonell.com</footer>
+</body>
+</html>

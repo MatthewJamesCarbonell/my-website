@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matthew James Carbonell — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --accent:#009CA2;
+      --gray:#666666;
+      --gray-2:#999999;
+      --text:#111111;
+    }
+    @page {
+      size: Letter;
+      margin: 0.65in 0.75in;
+    }
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      font-family: 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      font-size: 10.5pt;
+      line-height: 1.12;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      margin: 0;
+    }
+    .wrap{ width: 100%; }
+
+    /* Header */
+    .top-rule{ height: 1pt; background: var(--accent); margin-bottom: 8pt; }
+  .name-block{ border-top: 1pt solid var(--accent); border-bottom: 1pt solid var(--accent); padding: 8pt 0 14pt; display: grid; grid-template-columns: 1fr auto; gap: 16pt; align-items: center; }
+    .name{ font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; font-size: 16pt; letter-spacing: 0.2px; }
+    .subtitle{ font-family: 'Montserrat', Arial, sans-serif; font-weight: 600; font-size: 10.5pt; color: var(--gray); margin-top: 2pt; }
+    .contact{ text-align: right; color: var(--gray); font-size: 10pt; line-height: 1.3; }
+    .contact a{ color: var(--gray); text-decoration: none; border-bottom: 0.5pt solid rgba(0,0,0,0.06); }
+
+  /* Sections */
+  h2{ font-family: 'Montserrat', Arial, sans-serif; font-weight: 600; font-size: 11pt; color: var(--accent); margin: 16pt 0 6pt; padding-bottom: 3pt; border-bottom: 1pt solid var(--gray-2); letter-spacing: 0.3px; }
+    p{ margin: 0 0 6pt; }
+
+    .summary{ margin-top: 8pt; }
+
+    .two-col-list{
+      columns: 2;
+      column-gap: 24pt;
+      margin: 4pt 0 8pt;
+      padding-left: 14pt; /* allow bullets in column flow */
+    }
+    .two-col-list li{ break-inside: avoid; margin: 2pt 0; }
+    .two-col-list li::marker{ color: var(--accent); }
+
+    ul{ margin: 4pt 0 8pt; padding-left: 14pt; }
+    li{ margin: 2pt 0; }
+    li::marker{ color: var(--accent); }
+
+    .role{ display: grid; grid-template-columns: 1fr auto; gap: 8pt; align-items: baseline; margin-top: 8pt; }
+    .role-title{ font-weight: 600; }
+    .role-meta{ color: var(--gray); font-size: 9.5pt; }
+
+    .divider{ height: 1pt; background: rgba(0,0,0,0.06); margin: 10pt 0 6pt; }
+
+  .footer{ border-top: 1pt solid var(--gray-2); color: var(--gray-2); font-size: 8.5pt; padding-top: 6pt; margin-top: 10pt; text-align: right; }
+
+  /* Page break and page-2 header */
+  .page-break{ page-break-before: always; }
+  .page-meta{ display: none; }
+  .page-num-bottom{ color: #777; font-size: 8pt; text-align: right; margin-top: 6pt; }
+  .divider-cyan{ height: 1pt; background: var(--accent); margin: 8pt 0 0; opacity: 0.9; }
+  .qr{ text-align: right; margin-top: 8pt; }
+  .qr img{ width: 0.9in; border: 0.5pt solid rgba(0,0,0,0.15); padding: 4pt; border-radius: 3pt; }
+  .sub{ margin: 2pt 0 6pt; padding-left: 14pt; }
+  .sub li::marker{ color: var(--accent); }
+
+    /* Fine print helpers */
+    .muted{ color: var(--gray); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-rule"></div>
+
+    <div class="name-block">
+      <div>
+        <div class="name">MATTHEW JAMES CARBONELL</div>
+        <div class="subtitle">Advocate │ Mediator │ Communicator</div>
+      </div>
+      <div class="contact">
+        Miami, FL · <a href="mailto:matthewjamescarbonell@gmail.com">matthewjamescarbonell@gmail.com</a><br/>
+        305-791-6276 · <a href="https://www.linkedin.com/in/matthew-carbonell-a73b1b230" target="_blank" rel="noopener">linkedin.com/in/matthew-carbonell-a73b1b230</a>
+      </div>
+    </div>
+
+    <h2>Professional Summary</h2>
+    <p class="summary">
+      Resolution-driven communicator bridging healthcare, justice, and community engagement. Skilled in building referral pipelines, coordinating high-stakes communication, and guiding outreach teams through data-driven growth and trauma-informed practice to deliver measurable impact.
+    </p>
+
+    <h2>Core Competencies</h2>
+    <ul class="two-col-list">
+      <li>Community Engagement</li>
+      <li>Crisis Communication</li>
+      <li>Provider Relations</li>
+      
+      <li>Referral Pipeline Development</li>
+      <li>CRM / Salesforce Analytics</li>
+      <li>Public Speaking</li>
+      <li>HIPAA Compliance</li>
+    </ul>
+
+    <h2>Professional Experience</h2>
+
+    <div class="role">
+      <div class="role-title">Donor Family Advocate | Life Alliance Organ Recovery Agency</div>
+      <div class="role-meta">2024 – 2025</div>
+    </div>
+    <ul>
+  <li>Coordinated communication among medical teams and donor families; produced PSAs and KPI reports.</li>
+      <li>Logged referral data and strengthened hospital relationships that increased consent follow-through.</li>
+    </ul>
+
+    <div class="role">
+      <div class="role-title">Central Case Manager / County Mediator | Broward County Clerk of Court</div>
+      <div class="role-meta">2023 – 2024</div>
+    </div>
+    <ul>
+      <li>Resolved 70 cases without impasse through structured mediation; developed plain-language summaries for public record.</li>
+      <li>Developed and standardized cross-department communication protocols for attorneys and law enforcement.</li>
+    </ul>
+
+    <div class="role">
+      <div class="role-title">Head of Recruitment | Toastmasters International – Miracle Mile</div>
+      <div class="role-meta">2022 – 2023</div>
+    </div>
+    <ul>
+      <li>Directed membership drives (+20%) and built CRM tracking systems; coached emerging speakers and managed public events reaching 200+ attendees.</li>
+    </ul>
+
+    <div class="role">
+      <div class="role-title">Law Clerk | Barry M. Wax Criminal Defense Firm</div>
+      <div class="role-meta">2022</div>
+    </div>
+    <ul>
+      <li>Drafted motions and public-facing briefs; researched precedent for policy communication.</li>
+    </ul>
+
+    <div class="footer">© Matthew James Carbonell — Community Engagement</div>
+    <div class="divider-cyan"></div>
+
+    <div class="page-break"></div>
+
+    <h2>Leadership & Community Service</h2>
+    <div class="role" style="margin-top: 4pt;">
+      <div class="role-title">Guardian Ad Litem Volunteer | Florida Guardian Ad Litem Program</div>
+      <div class="role-meta">2020 – 2024</div>
+    </div>
+  <p>Advocated for abused and neglected children; authored court reports, coordinated with attorneys and social workers, and presented recommendations to judges.</p>
+
+    <div class="role">
+      <div class="role-title">Founding Father & Director of Outreach | Delta Upsilon Fraternity – FIU</div>
+      <div class="role-meta">—</div>
+    </div>
+    <p>Built chapter from ground up; launched Global Service Initiative programming.</p>
+
+    <h2>Select Projects & Campaigns</h2>
+    <ul>
+      <li>#MBInformed Digital Transparency Initiative — 30-day bilingual social calendar template.</li>
+      <li>Miami Beach Crisis Comms Brief — hurricane protocol model adopted for PIO portfolio.</li>
+      <li>60-Day Community Engagement Plan — ZIP-based mapping and referral growth simulation for Kyo.</li>
+    </ul>
+
+    <h2>Education</h2>
+    <div class="role" style="margin-top: 4pt;">
+      <div class="role-title">Nova Southeastern University — J.D. Coursework</div>
+      <div class="role-meta">2021 – 2023</div>
+    </div>
+    <p class="muted">Focus in Mediation & Constitutional Law</p>
+
+    <div class="role">
+      <div class="role-title">Florida International University — B.A., Political Science</div>
+      <div class="role-meta">—</div>
+    </div>
+    <ul class="sub">
+      <li>Dean’s List ×2</li>
+    </ul>
+
+  <h2>Certifications</h2>
+  <p>County Mediator | Guardian Ad Litem | Crisis Intervention Training | CPR Certified</p>
+
+  <div class="qr"><a href="https://matthewjamescarbonell.com" target="_blank" rel="noopener"><img src="assets/qr_site.png" alt="Portfolio QR"/></a></div>
+  <div class="page-num-bottom">Page 2 of 2</div>
+  <div class="footer">© Matthew James Carbonell — Community Engagement</div>
+
+  </div>
+</body>
+</html>
