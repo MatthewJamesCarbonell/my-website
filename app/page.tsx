@@ -107,24 +107,9 @@ const experience = [
 
 const aboutPhotos = [
   {
-    src: "/Main image.jpg",
-    alt: "Matthew Carbonell headshot in tailored suit",
-    position: "center",
-  },
-  {
     src: "/image-1.jpeg",
     alt: "Matthew Carbonell professional portrait",
     position: "center",
-  },
-  {
-    src: "/image-2.jpeg",
-    alt: "Matthew Carbonell speaking at a Toastmasters event",
-    position: "center",
-  },
-  {
-    src: "/image-3.jpeg",
-    alt: "Matthew Carbonell collaborating with a legal team",
-    position: "center top",
   },
   {
     src: "/image-4.jpeg",
