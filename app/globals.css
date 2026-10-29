@@ -126,6 +126,12 @@
   --btn-conversation-bg: rgba(255, 255, 255, 0.96);
 }
 
+@property --conversation-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .dark .btn-conversation {
   --btn-conversation-bg: rgba(15, 23, 42, 0.92);
 }
@@ -187,7 +193,11 @@
   z-index: 0;
   overflow: hidden;
   border-radius: 0.875rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+  min-height: 2.75rem;
+  padding-block: 0.625rem;
+  line-height: 1.25rem;
+  text-align: center;
+  transition: box-shadow 0.25s ease, background 0.3s ease;
   background: rgba(3, 4, 12, 0.96) !important;
   border-color: rgba(11, 14, 26, 0.82) !important;
   color: rgba(205, 212, 232, 0.94) !important;
@@ -200,16 +210,34 @@
   box-shadow: inset 0 0 0 1px rgba(15, 20, 34, 0.62);
 }
 
+/* Animate the gradient angle, keeping the border and its inset fixed. */
 .btn-conversation::before {
   content: "";
   position: absolute;
-  inset: -2px;
+  inset: 0;
+  padding: 2px;
   border-radius: inherit;
-  background: conic-gradient(from 0deg, #38bdf8, #a855f7, #f97316, #22d3ee, #38bdf8);
+  background: conic-gradient(from var(--conversation-angle), #38bdf8, #a855f7, #f97316, #22d3ee, #38bdf8);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.3s ease;
-  animation: rainbow-orbit 4s linear infinite;
-  z-index: -2;
+  animation: conversation-colors 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes conversation-colors {
+  to {
+    --conversation-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-conversation::before {
+    animation: none;
+  }
 }
 
 .card-pulse {
@@ -333,8 +361,10 @@
 }
 
 .btn-conversation:hover,
-.btn-conversation:focus-visible {
-  transform: translateY(-1px);
+.btn-conversation:focus-visible,
+.btn-conversation.btn-dark-slate:hover,
+.btn-conversation.btn-dark-slate:focus-visible {
+  transform: none;
   box-shadow: 0 0 36px rgba(168, 85, 247, 0.5);
   color: #fff;
   border-color: transparent !important;
