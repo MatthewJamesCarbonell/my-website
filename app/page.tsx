@@ -22,94 +22,207 @@ import {
 } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  { label: "Strengths", href: "#features" },
-  { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "Skills", href: "#skills" },
-  { label: "Connect", href: "#connect" },
-  { label: "Leadership", href: "#leadership" },
-  { label: "Highlights", href: "#gallery" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  {
+    "label": "About",
+    "href": "#about"
+  },
+  {
+    "label": "Experience",
+    "href": "#experience"
+  },
+  {
+    "label": "Projects",
+    "href": "#projects"
+  },
+  {
+    "label": "Service",
+    "href": "#service"
+  },
+  {
+    "label": "Education",
+    "href": "#education"
+  },
+  {
+    "label": "Beyond Work",
+    "href": "#beyond-work"
+  },
+  {
+    "label": "Contact",
+    "href": "#contact"
+  }
 ];
 
 const differentiators = [
   {
-    title: "Crisis & High-Stakes Communication",
-    description:
-      "Guides families, stakeholders, and executive teams through difficult conversations with calm precision and measurable outcomes.",
-    metric: "70+ county mediations.",
+    "title": "Investigation",
+    "description": "Evidence review, investigative interviewing, and documented findings in regulated environments.",
+    "metric": "Regulatory casework"
   },
   {
-    title: "Strategic Negotiation",
-    description:
-      "Translates legal, civic, and business priorities into practical roadmaps that keep momentum moving toward agreements.",
-    metric: "0 impasses.",
+    "title": "Mediation and Advocacy",
+    "description": "Clear communication and careful judgment in court, healthcare, and child-advocacy settings.",
+    "metric": "Certified County Mediator"
   },
   {
-    title: "Human-Centered Advocacy",
-    description:
-      "Balances policy savvy with empathy - from donor advocacy to child welfare cases - to ensure every decision protects people first.",
-    metric: "7+ years in advocacy",
-  },
+    "title": "Web Development",
+    "description": "Independent web projects with clear writing, responsive layouts, and direct contact paths.",
+    "metric": "Personal and business websites"
+  }
 ];
 
 const capabilities = [
   {
     icon: Shield,
     title: "Crisis Management",
-    body: "High-stakes interventions delivered with calm, respectful authority when every second matters.",
+    body: "Calm communication and plain-language explanations in sensitive healthcare, court, and investigative settings.",
   },
   {
     icon: Sparkles,
     title: "Principled Negotiation",
-    body: "Fisher and Ury inspired methods that separate people from problems and drive durable agreements.",
+    body: "Structured dialogue that helps participants clarify concerns, evaluate proposals, and consider resolution options.",
   },
   {
     icon: Rocket,
     title: "Stakeholder Engagement",
-    body: "Executive and diplomatic coordination that keeps cross-functional teams aligned and informed.",
+    body: "Coordination across medical teams, attorneys, court personnel, service providers, and families.",
   },
 ];
 
 const experience = [
   {
-    role: "Donor Family Advocate",
-    org: "Life Alliance Organ Recovery Agency",
-    dates: "Oct 2024 - Jul 2025",
-    summary:
-      "Directed life-saving conversations between donor families and medical teams, safeguarding clarity and compassion in urgent moments.",
+    "role": "Medical Malpractice Investigator",
+    "org": "Florida Department of Health · Division of Medical Quality Assurance",
+    "dates": "March 2026–Present",
+    "bullets": [
+      "Review complaints and supporting records, organize evidence, and prepare documented findings for regulatory investigations.",
+      "Coordinate evidence review, confidential documentation, and follow-up across concurrent cases, including periods with four to five active investigations.",
+      "Helped a woman accept police assistance in response to suspected human trafficking by explaining safety priorities and the potential to prevent harm to others."
+    ]
   },
   {
-    role: "Central Case Manager & County Mediator",
-    org: "Broward County Clerk of Court",
-    dates: "Dec 2023 - Jul 2024",
-    summary:
-      "Mediated high-stakes disputes between legal partners and constituents, aligning stakeholder goals without compromising equity or justice.",
+    "role": "Donor Family Advocate",
+    "org": "Life Alliance Organ Recovery Agency · Miami, Florida",
+    "dates": "October 2024–July 2025",
+    "bullets": [
+      "Guided families through sensitive conversations about organ donation, explaining authorization, timing, and procedures in accessible language.",
+      "Completed structured donor-risk interviews and clarified medical and social histories used in transplant evaluation.",
+      "Coordinated with intensive care staff, administrators, and transplant teams to meet time-sensitive requirements.",
+      "Maintained confidential donor records documenting family interactions and authorization steps."
+    ]
   },
   {
-    role: "Criminal Defense Firm Law Clerk",
-    org: "Law Offices of Barry M. Wax",
-    dates: "Jun 2022 - Dec 2022",
-    summary:
-      "Drafted trial-ready motions, organized complex case files, and supported attorneys with precedent research in expedited environments.",
+    "role": "Central Case Manager and County Mediator",
+    "org": "Broward County Clerk of Court · Fort Lauderdale, Florida",
+    "dates": "December 2023–July 2024",
+    "bullets": [
+      "Mediated disputes involving attorneys, law enforcement, and community members while maintaining neutrality.",
+      "Helped participants clarify underlying concerns, evaluate proposals, and consider workable resolution options.",
+      "Managed referrals, scheduling, case documentation, outcome tracking, and follow-up instructions."
+    ]
   },
   {
-    role: "Guardian ad Litem Volunteer",
-    org: "Florida Guardian ad Litem Program",
-    dates: "Nov 2020 - Oct 2024",
-    summary:
-      "Investigated sensitive child welfare cases, presenting court-ready findings and marshaling resources for the most vulnerable clients.",
+    "role": "Client Expert and Team Lead",
+    "org": "Del-Tex Elite Marketing · Davie, Florida",
+    "dates": "May–December 2023",
+    "bullets": [
+      "Assessed client needs, presented tailored solutions, and maintained outreach and sales activity in CRM systems.",
+      "Reviewed performance data and coached team members on communication, follow-through, and progress toward targets."
+    ]
   },
+  {
+    "role": "Criminal Defense Law Clerk",
+    "org": "Law Offices of Barry M. Wax · Miami, Florida",
+    "dates": "June–December 2022",
+    "bullets": [
+      "Researched statutes, case law, procedural rules, and constitutional issues to support attorney case preparation.",
+      "Drafted legal memoranda, motions, and other case documents.",
+      "Organized discovery, exhibits, and confidential files for attorney review."
+    ]
+  }
+];
+
+const service = [
+  {
+    "role": "Volunteer Guardian ad Litem",
+    "org": "Florida Guardian ad Litem Program · Miami-Dade County",
+    "dates": "2020–2024",
+    "bullets": [
+      "Evaluated multiple prospective foster homes and helped secure a supportive placement for a child who had survived severe abuse, prioritizing the child’s individual care needs.",
+      "Conducted home visits, caregiver assessments, interviews, and records reviews to inform recommendations in dependency proceedings.",
+      "Prepared court reports and coordinated community resources for children and caregivers."
+    ]
+  },
+  {
+    "role": "Volunteer Patient Advocate and Practice Administrator",
+    "org": "Garnet & Carbonell DPM, LLC · Coral Gables, Florida",
+    "dates": "2024–2026",
+    "bullets": [
+      "Supported patient intake, scheduling, administrative communication, records management, and follow-up in an outpatient medical practice."
+    ]
+  },
+  {
+    "role": "Volunteer Family Mediation Firm Clerk",
+    "org": "Gables Mediation",
+    "dates": "2014–2018",
+    "bullets": [
+      "Organized sensitive family-law files, prepared draft agreements for mediator review, and coordinated mediation scheduling."
+    ]
+  }
+];
+
+const projects = [
+  {
+    "name": "Day One Web Studio",
+    "kind": "Independent web project",
+    "summary": "Developed a website presenting a focused website-building service, with project examples, service information, frequently asked questions, and contact and intake paths.",
+    "detail": "The project includes responsive layouts, interactive components, and a reusable starter-site template.",
+    "links": []
+  },
+  {
+    "name": "Personal Portfolio",
+    "kind": "Next.js · React · TypeScript",
+    "summary": "Developed this professional website using Next.js, React, and TypeScript, bringing career experience, education, recommendations, and contact options into one place.",
+    "detail": "",
+    "links": []
+  },
+  {
+    "name": "Business Website Demonstrations",
+    "kind": "Website concepts",
+    "summary": "Created distinct website concepts for a mobile notary service and a home-cleaning business. Each demonstrates service presentation, visual identity, and clear paths to call, email, or request information.",
+    "detail": "",
+    "links": [
+      {
+        "label": "Mobile notary example",
+        "href": "https://mjmobilenotary.pages.dev"
+      },
+      {
+        "label": "Cleaning business example",
+        "href": "https://fresh-start-cleaning-co.pages.dev"
+      }
+    ]
+  }
 ];
 
 const aboutPhotos = [
   {
+    src: "/Main image.jpg",
+    alt: "Matthew Carbonell headshot in tailored suit",
+    position: "center",
+  },
+  {
     src: "/image-1.jpeg",
     alt: "Matthew Carbonell professional portrait",
     position: "center",
+  },
+  {
+    src: "/image-2.jpeg",
+    alt: "Matthew Carbonell speaking at a Toastmasters event",
+    position: "center",
+  },
+  {
+    src: "/image-3.jpeg",
+    alt: "Matthew Carbonell collaborating with a legal team",
+    position: "center top",
   },
   {
     src: "/image-4.jpeg",
@@ -125,47 +238,41 @@ const aboutPhotos = [
 
 const education = [
   {
-    program: "Juris Doctor - J.D. Applicant",
-    institution: "Nova Southeastern University Shepard Broad College of Law",
-    dates: "Jun 2021 - Jan 2023",
-    notes: [
-      "Law School 2L curriculum",
-      "Torts",
-      "Contracts",
-      "Legal Reasoning and Writing",
-      "Mediation",
-      "Constitutional Law",
-      "Criminal Law",
-    ],
+    "program": "Bachelor of Arts in Political Science",
+    "institution": "Florida International University",
+    "dates": "2021",
+    "notes": []
   },
   {
-    program: "Bachelor of Arts - Political Science",
-    institution: "Florida International University",
-    dates: "Jun 2016 - Apr 2021",
-    notes: ["Dean's List (2x)", "International Relations and Public Policy concentrations", "Leadership in Delta Upsilon and Toastmasters"],
+    "program": "Juris Doctor Coursework",
+    "institution": "Nova Southeastern University, Shepard Broad College of Law",
+    "dates": "",
+    "notes": [
+      "Coursework toward the J.D.; degree not conferred."
+    ]
   },
   {
-    program: "Dual Enrollment - School for Advanced Studies",
-    institution: "Miami-Dade College",
-    dates: "Aug 2014 - May 2015",
-    notes: ["Accelerated curriculum", "Bridged high school honors with college-level research"],
-  },
+    "program": "Certified County Mediator",
+    "institution": "Supreme Court of Florida",
+    "dates": "",
+    "notes": []
+  }
 ];
 
 const highlights = [
   {
     heading: "Leadership",
-    blurb: "Toastmasters outreach lead, guiding double-digit membership growth through storytelling and community-building.",
+    blurb: "Recruitment, outreach, team coaching, and community programming through professional and volunteer roles.",
     icon: Crown,
   },
   {
     heading: "Research & Analysis",
-    blurb: "Synthesizes legal, policy, and market data into crisp briefs for stakeholders across public and private sectors.",
+    blurb: "Legal research, evidence review, and organized reports for attorney, court, and regulatory review.",
     icon: Microscope,
   },
   {
-    heading: "Creative Strategy",
-    blurb: "Designs compelling narratives - from pitch decks to courtroom-ready arguments - that move audiences to action.",
+    heading: "Web Projects",
+    blurb: "Personal and small-business website concepts with responsive layouts and clear contact paths.",
     icon: Palette,
   },
 ];
@@ -181,80 +288,52 @@ const socialProof = [
 
 const leadershipRoles = [
   {
-    title: "Toastmasters - Head of Recruitment",
-    org: "Miracle Mile",
-    dates: "2022 - 2023",
-    summary: "Led storytelling-rich outreach that lifted membership by roughly twenty percent year over year.",
+    "title": "Recruitment Leadership",
+    "org": "Toastmasters International, Miracle Mile",
+    "dates": "2022–2023",
+    "summary": "Led recruitment messaging, outreach, and events, contributing to approximately 20 percent membership growth."
   },
   {
-    title: "Guardian ad Litem - Volunteer",
-    org: "Florida Guardian ad Litem Program",
-    dates: "2020 - 2024",
-    summary: "Investigated sensitive cases, authored filings, and protected children's interests in court.",
-  },
-  {
-    title: "Delta Upsilon - Founding Father",
-    org: "Florida International University",
-    dates: "2018 - 2021",
-    summary: "Launched a new chapter, forged philanthropy partnerships, and anchored campus outreach initiatives.",
-  },
+    "title": "Founding Member and Director of Outreach",
+    "org": "Delta Upsilon, FIU",
+    "dates": "2018–2021",
+    "summary": "Helped establish chapter operations, recruitment activities, campus partnerships, and philanthropy programming."
+  }
 ];
 
 const skills = [
   {
-    category: "Crisis and Mediation",
-    bullets: [
-      "Crisis intervention and de-escalation",
-      "Principled negotiation frameworks",
-      "Stakeholder alignment under pressure",
-      "Guardian ad Litem advocacy",
-    ],
+    "category": "Investigation and Research",
+    "bullets": [
+      "Investigative interviewing",
+      "Evidence review",
+      "Legal research and writing"
+    ]
   },
   {
-    category: "Communication and Storytelling",
-    bullets: [
-      "Executive-ready brief writing",
-      "Cross-cultural messaging",
-      "Toastmasters leadership coaching",
-      "High-empathy client interviewing",
-    ],
+    "category": "Mediation and Communication",
+    "bullets": [
+      "Mediation",
+      "Conflict de-escalation",
+      "Plain-language communication"
+    ]
   },
   {
-    category: "Research and Analysis",
-    bullets: [
-      "Legal research and motion drafting",
-      "Policy and regulatory analysis",
-      "Data synthesis for decision makers",
-      "Risk and compliance documentation",
-    ],
+    "category": "Case Coordination",
+    "bullets": [
+      "Case coordination and follow-up",
+      "Confidential records management",
+      "Cross-functional communication"
+    ]
   },
   {
-    category: "Leadership and Operations",
-    bullets: [
-      "Program development and outreach",
-      "Volunteer mobilization",
-      "Change management playbooks",
-      "Team coaching with KPI dashboards",
-    ],
-  },
-  {
-    category: "Digital Architecture",
-    bullets: [
-      "Coded and launched this website",
-      "Iterative UX polish with real-time feedback",
-      "Integrations for contact, email, and automation",
-      "Design systems tuned for brand storytelling",
-    ],
-  },
-  {
-    category: "Sales and Team Development",
-    bullets: [
-      "Commanded CRM dashboards to track every touchpoint",
-      "Converted cold leads into warm handshakes with clarity and confidence",
-      "Tailored client solutions and negotiated bespoke deals",
-      "Coached teams with KPI-driven playbooks to ignite momentum",
-    ],
-  },
+    "category": "Web Development",
+    "bullets": [
+      "Responsive website development",
+      "Service and portfolio presentation",
+      "Contact and intake paths"
+    ]
+  }
 ];
 
 const socials = [
@@ -328,6 +407,7 @@ type SectionCtaProps = {
 function SectionCta({ align = "center", className, pulseSchedule = false, buttonTone = "default" }: SectionCtaProps) {
   const base = align === "start" ? "justify-center md:justify-start" : "justify-center";
   const combined = ["flex flex-wrap gap-3", base, className].filter(Boolean).join(" ");
+  const resumeClasses = ["btn-resume", buttonTone === "slate" ? "btn-dark-slate" : ""].filter(Boolean).join(" ");
   const conversationClasses = [
     "btn-conversation",
     buttonTone === "slate" ? "btn-dark-slate" : "",
@@ -338,6 +418,11 @@ function SectionCta({ align = "center", className, pulseSchedule = false, button
 
   return (
     <div className={combined}>
+      <Button size="lg" className={resumeClasses} asChild>
+        <Link href="/Matthew-Carbonell-Resume.pdf" target="_blank" rel="noopener">
+          View Resume
+        </Link>
+      </Button>
       <Button size="lg" variant="outline" className={conversationClasses} asChild>
         <Link href="#contact">Schedule a conversation</Link>
       </Button>
@@ -401,37 +486,42 @@ export default function LandingPage() {
           <Link href="#hero" className="text-lg font-semibold">
             Matthew Carbonell
           </Link>
-          <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+          <nav aria-label="Main navigation" className="hidden items-center gap-5 text-sm font-medium xl:flex">
             {navLinks.map((item) => (
               <Link key={item.href} href={item.href} className="text-slate-600 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="hidden md:block pl-4">
+          <div className="pl-4">
             <Button size="sm" variant="outline" className="btn-conversation" asChild>
               <Link href="#contact">Let&apos;s Connect</Link>
             </Button>
           </div>
         </div>
+        <nav aria-label="Section navigation" className="flex gap-5 overflow-x-auto px-4 pb-3 text-sm text-slate-600 dark:text-slate-300 xl:hidden">
+          {navLinks.map((item) => (
+            <Link key={item.href} href={item.href} className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400">{item.label}</Link>
+          ))}
+        </nav>
       </header>
 
       <main>
         <section
           id="hero"
-          className="relative overflow-hidden bg-gradient-to-b from-white/70 via-white/40 to-white/10 dark:from-[#10141b] dark:via-[#10141b] dark:to-[#10141b]"
+          className="scroll-mt-32 relative overflow-hidden bg-gradient-to-b from-white/70 via-white/40 to-white/10 dark:from-[#10141b] dark:via-[#10141b] dark:to-[#10141b]"
         >
           <div className="mx-auto max-w-5xl px-4 py-20 md:py-28">
             <div className="space-y-10">
               <div className="space-y-6">
                 <p className="inline-flex flex-wrap items-center gap-2 text-sm font-semibold tracking-wide text-slate-600 dark:text-[#8fa2c6]">
-                  Crisis Negotiator | Strategic Advocate | Trusted County Mediator
+                  Regulatory Investigator · Certified County Mediator
                 </p>
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                  Transforming crisis into consensus.
+                  Matthew James “MJ” Carbonell
                 </h1>
                 <p className="max-w-2xl text-lg text-slate-600 dark:text-[#8fa2c6]">
-                  I guide organizations through high-stakes moments with clarity, decisive negotiation, and human-centered outcomes that endure.
+                  Investigation, mediation, advocacy, and independent web development. Based in Tallahassee, Florida.
                 </p>
               </div>
 
@@ -456,14 +546,14 @@ export default function LandingPage() {
                 <CardHeader>
                   <CardTitle className="text-2xl">Core Strengths</CardTitle>
                   <CardDescription className="text-neutral-300">
-                    High-trust relationships, decisive communication, and strategy under pressure.
+                    Careful evidence review, clear communication, and practical follow-through.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm text-neutral-200">
                   <ul className="space-y-2">
-                    <li>- Crisis navigation for healthcare, legal, and community stakeholders</li>
-                    <li>- Negotiation frameworks grounded in empathy and measurable outcomes</li>
-                    <li>- Cross-functional collaboration between legal, medical, and civic partners</li>
+                    <li>- Investigative interviewing and confidential records management</li>
+                    <li>- Mediation and plain-language explanations of complex information</li>
+                    <li>- Coordination across legal, medical, and community settings</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -472,7 +562,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="about" className="border-y border-slate-200/60 bg-white/75 py-20 text-slate-900 backdrop-blur-sm dark:border-[#272c35] dark:bg-[#151920] dark:text-slate-100">
+        <section id="about" className="scroll-mt-32 border-y border-slate-200/60 bg-white/75 py-20 text-slate-900 backdrop-blur-sm dark:border-[#272c35] dark:bg-[#151920] dark:text-slate-100">
           <div className="mx-auto flex max-w-5xl flex-col gap-16 px-4 md:flex-row md:items-center md:gap-12">
             <div
               className="group mx-auto w-full max-w-xs md:max-w-sm"
@@ -501,6 +591,7 @@ export default function LandingPage() {
                       key={photo.src}
                       src={photo.src}
                       alt={photo.alt}
+                      onError={() => setPhotoOrder((order) => order.filter((index) => index !== photoIndex))}
                       fill
                       sizes="(max-width: 768px) 16rem, 18rem"
                       className={`absolute inset-0 rounded-[1.75rem] border border-white/80 object-cover shadow-2xl transition-transform duration-500 ease-out dark:border-slate-700/70 ${topCardClasses}`}
@@ -518,13 +609,10 @@ export default function LandingPage() {
             <div className="mx-auto max-w-xl text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl dark:text-white">About Me</h2>
               <p className="mt-6 text-base leading-relaxed text-slate-700 md:text-lg dark:text-[#c5ccd9]">
-                I&apos;m Matthew James Carbonell, a strategist who lives at the intersection of advocacy, communication,
-                and crisis leadership. From donor family support in critical care to courtroom mediation and executive
-                coordination, I translate high-stakes moments into action plans that keep teams aligned and missions moving.
+                My work spans regulatory investigations, court administration, legal research, and organ donation advocacy. Across those settings, I’ve gathered sensitive information, evaluated evidence, and helped people navigate decisions with significant personal consequences.
               </p>
               <p className="mt-6 text-base leading-relaxed text-slate-700 md:text-lg dark:text-[#c5ccd9]">
-                I thrive where enterprise meets empathy&mdash;turning conflict into resolution, reinforcing systems that
-                endure, and building relationships that matter across healthcare, legal, and civic arenas.
+                I also develop websites through independent projects, combining clear writing, responsive layouts, and straightforward ways for visitors to make contact.
               </p>
               <div className="mt-10">
                 <p className="text-xl font-semibold italic text-slate-900 md:text-2xl dark:text-white">
@@ -536,12 +624,12 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="features" className="border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#10141b]">
+        <section id="features" className="scroll-mt-32 border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#10141b]">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
               <h2 className="text-3xl font-bold sm:text-4xl">Where I create the most impact</h2>
               <p className="text-slate-600 dark:text-[#9eaac0]">
-                Blending legal training, communication, and design thinking to move missions forward.
+                Experience across investigation, mediation, advocacy, and web development.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
@@ -559,7 +647,7 @@ export default function LandingPage() {
                       <CardTitle>{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-200/95 dark:text-[#b8c1d3]">{item.body}</p>
+                      <p className="text-sm text-slate-600 dark:text-[#b8c1d3]">{item.body}</p>
                     </CardContent>
                   </Card>
                 );
@@ -580,7 +668,7 @@ export default function LandingPage() {
                       <CardTitle>{item.heading}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-200/95 dark:text-[#b8c1d3]">{item.blurb}</p>
+                      <p className="text-sm text-slate-600 dark:text-[#b8c1d3]">{item.blurb}</p>
                     </CardContent>
                   </Card>
                 );
@@ -590,21 +678,23 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="experience" className="border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#151920]">
+        <section id="experience" className="scroll-mt-32 border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#151920]">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
-              <h2 className="text-3xl font-bold sm:text-4xl">Selected experience</h2>
+              <h2 className="text-3xl font-bold sm:text-4xl">Professional Experience</h2>
               <p className="text-slate-600 dark:text-[#c5ccd9]">
-                A sample of roles that shaped my approach to advocacy, strategy, and mediation.
+                Regulatory, healthcare, court, and client-facing work.
               </p>
             </div>
-            <div className="space-y-6 border-l border-slate-200 pl-6 dark:border-[#2f3642] md:pl-10">
+            <div className="space-y-10 border-l border-slate-200 pl-6 dark:border-[#2f3642] md:pl-10">
               {experience.map((item) => (
                 <div key={item.role} className="group relative pl-6">
                   <span className="absolute left-[-13px] top-2 inline-flex size-3 rounded-full border-2 border-white bg-slate-900 dark:border-[#151920] dark:bg-white" aria-hidden />
                   <h3 className="text-xl font-semibold text-slate-900 dark:text-[#f3f5f9]">{item.role}</h3>
                   <p className="text-sm text-slate-500 dark:text-[#8b94a6]">{item.org} - {item.dates}</p>
-                  <p className="mt-2 text-sm text-slate-600 transition-all duration-200 dark:text-[#c5ccd9] md:opacity-0 md:-translate-y-1 md:group-hover:translate-y-0 md:group-hover:opacity-100">{item.summary}</p>
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-600 dark:text-[#c5ccd9]">
+                    {item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -612,12 +702,63 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="education" className="border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#10141b]">
+        <section id="projects" className="scroll-mt-32 border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#10141b]">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
-              <h2 className="text-3xl font-bold sm:text-4xl">Education</h2>
+              <h2 className="text-3xl font-bold sm:text-4xl">Independent Web Projects</h2>
+              <p className="text-slate-600 dark:text-[#9eaac0]">Personal projects, a website-building service, and business website demonstrations.</p>
+            </div>
+            <div className="grid gap-6 lg:grid-cols-3">
+              {projects.map((project) => (
+                <Card key={project.name} className={`${interactiveCardClass} dark:border-[#2c333f] dark:bg-[#171c24]`}>
+                  <CardHeader>
+                    <CardDescription>{project.kind}</CardDescription>
+                    <CardTitle>{project.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4 text-sm leading-relaxed text-slate-600 dark:text-[#b8c1d3]">
+                    <p>{project.summary}</p>
+                    {project.detail && <p>{project.detail}</p>}
+                    {project.links.length > 0 && (
+                      <ul className="space-y-3 pt-2">
+                        {project.links.map((link) => (
+                          <li key={link.href}><a href={link.href} target="_blank" rel="noopener noreferrer" className="rounded-sm font-medium text-blue-700 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-blue-300">{link.label}<span className="sr-only"> (opens in a new tab)</span></a></li>
+                        ))}
+                      </ul>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="service" className="scroll-mt-32 border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#151920]">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="mb-12 max-w-2xl space-y-4">
+              <h2 className="text-3xl font-bold sm:text-4xl">Advocacy and Service</h2>
+              <p className="text-slate-600 dark:text-[#c5ccd9]">Volunteer work in child advocacy, patient support, and family mediation.</p>
+            </div>
+            <div className="space-y-10 border-l border-slate-200 pl-6 dark:border-[#2f3642] md:pl-10">
+              {service.map((item) => (
+                <div key={item.role} className="relative pl-6">
+                  <span className="absolute left-[-13px] top-2 inline-flex size-3 rounded-full border-2 border-white bg-slate-900 dark:border-[#151920] dark:bg-white" aria-hidden />
+                  <h3 className="text-xl font-semibold">{item.role}</h3>
+                  <p className="mt-1 text-sm text-slate-500 dark:text-[#8b94a6]">{item.org} · {item.dates}</p>
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-600 dark:text-[#c5ccd9]">
+                    {item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="education" className="scroll-mt-32 border-t border-slate-200/60 bg-white py-20 dark:border-[#272c35] dark:bg-[#10141b]">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="mb-12 max-w-2xl space-y-4">
+              <h2 className="text-3xl font-bold sm:text-4xl">Education and Credentials</h2>
               <p className="text-slate-600 dark:text-[#9eaac0]">
-                Academic foundations that fuel a balanced lens on law, policy, and human-centered advocacy.
+                Education and professional certification.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
@@ -630,8 +771,7 @@ export default function LandingPage() {
                     <CardTitle>{item.program}</CardTitle>
                     <CardDescription>
                       {item.institution}
-                      <br />
-                      {item.dates}
+                      {item.dates && <><br />{item.dates}</>}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -648,12 +788,12 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="skills" className="border-t border-slate-200/60 bg-slate-50 py-20 dark:border-[#272c35] dark:bg-[#151920]">
+        <section id="skills" className="scroll-mt-32 border-t border-slate-200/60 bg-slate-50 py-20 dark:border-[#272c35] dark:bg-[#151920]">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-12 max-w-2xl space-y-4">
               <h2 className="text-3xl font-bold sm:text-4xl">Skills</h2>
               <p className="text-slate-600 dark:text-[#c5ccd9]">
-                A snapshot of the capabilities I bring into negotiations, strategic planning sessions, and community work.
+                Skills applied across professional, volunteer, and independent projects.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -676,6 +816,69 @@ export default function LandingPage() {
               ))}
             </div>
             <SectionCta className="mt-12" />
+          </div>
+        </section>
+
+        <section
+          id="leadership"
+          className="border-t border-slate-200/60 bg-slate-50 py-20 dark:border-[#272c35] dark:bg-[#151920]"
+        >
+          <div className="mx-auto max-w-7xl px-4 md:py-4">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Leadership</h2>
+              <p className="mt-4 text-slate-600 dark:text-slate-300">
+                Recruitment, chapter development, and community outreach.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              {leadershipRoles.map((item) => (
+                <Card
+                  key={item.title}
+                  className={`${interactiveCardClass} dark:border-[#2f3642] dark:bg-[#1a1f27]`}
+                >
+                  <CardHeader>
+                    <CardTitle>{item.title}</CardTitle>
+                    <CardDescription>
+                      {item.org} ({item.dates})
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-slate-600 dark:text-slate-300">{item.summary}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <SectionCta className="mt-12" />
+          </div>
+        </section>
+        <section id="testimonials" className="py-20">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="mb-12 max-w-2xl space-y-4">
+              <h2 className="text-3xl font-bold sm:text-4xl">Voices from collaborators</h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {socialProof.map((item) => (
+                <Card key={item.name} className={`${interactiveCardClass} bg-white/95 dark:bg-slate-900/70`}>
+                  <CardContent className="flex h-full flex-col gap-6 p-6">
+                    <p className="text-sm text-slate-600 dark:text-slate-300">&ldquo;{item.quote}&rdquo;</p>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900 dark:text-white">{item.name}</p>
+                      <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{item.title}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <SectionCta className="mt-12" />
+          </div>
+        </section>
+
+        <section id="beyond-work" className="scroll-mt-32 border-t border-slate-200/60 bg-white py-16 dark:border-[#272c35] dark:bg-[#151920]">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Beyond Work</h2>
+              <p className="mt-5 text-base leading-relaxed text-slate-600 dark:text-[#c5ccd9]">Outside work, I enjoy writing, playing video games, watching YouTube, and spending time with friends.</p>
+            </div>
           </div>
         </section>
 
@@ -744,61 +947,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section
-          id="leadership"
-          className="border-t border-slate-200/60 bg-slate-50 py-20 dark:border-[#272c35] dark:bg-[#151920]"
-        >
-          <div className="mx-auto max-w-7xl px-4 md:py-4">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Leadership & Service</h2>
-              <p className="mt-4 text-slate-600 dark:text-slate-300">
-                Roles that sharpened my outreach, storytelling, and community-first muscle.
-              </p>
-            </div>
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {leadershipRoles.map((item) => (
-                <Card
-                  key={item.title}
-                  className={`${interactiveCardClass} dark:border-[#2f3642] dark:bg-[#1a1f27]`}
-                >
-                  <CardHeader>
-                    <CardTitle>{item.title}</CardTitle>
-                    <CardDescription>
-                      {item.org} ({item.dates})
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-slate-600 dark:text-slate-300">{item.summary}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <SectionCta className="mt-12" />
-          </div>
-        </section>
-        <section id="testimonials" className="py-20">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="mb-12 max-w-2xl space-y-4">
-              <h2 className="text-3xl font-bold sm:text-4xl">Voices from collaborators</h2>
-            </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {socialProof.map((item) => (
-                <Card key={item.name} className={`${interactiveCardClass} bg-white/95 dark:bg-slate-900/70`}>
-                  <CardContent className="flex h-full flex-col gap-6 p-6">
-                    <p className="text-sm text-slate-600 dark:text-slate-300">&ldquo;{item.quote}&rdquo;</p>
-                    <div>
-                      <p className="text-sm font-semibold text-slate-900 dark:text-white">{item.name}</p>
-                      <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{item.title}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <SectionCta className="mt-12" />
-          </div>
-        </section>
-
-        <section id="contact" className="border-t border-slate-200/60 bg-slate-50 py-20 dark:border-[#272c35] dark:bg-[#151920]">
+        <section id="contact" className="scroll-mt-32 border-t border-slate-200/60 bg-slate-50 py-20 dark:border-[#272c35] dark:bg-[#151920]">
           <div className="mx-auto max-w-6xl px-4">
             <div
               id="contact-card"
