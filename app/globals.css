@@ -435,3 +435,65 @@
   box-shadow: 0 34px 74px -28px rgba(64, 114, 230, 0.5) !important;
   transform: translateY(-1px);
 }
+
+/* Personal interests: quiet color, generous space, and a little personality. */
+.off-clock {
+  background: radial-gradient(ellipse at 8% 0%, rgba(139, 92, 246, 0.08), transparent 55%), #f8fafc;
+}
+.dark .off-clock {
+  background: radial-gradient(ellipse at 8% 0%, rgba(139, 92, 246, 0.1), transparent 55%), #10141b;
+}
+.off-clock-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid rgba(139, 92, 246, 0.24);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.75rem;
+  color: #6d28d9;
+}
+.dark .off-clock-tag { color: #ddd6fe; }
+.interest-card {
+  --interest-rgb: 139, 92, 246;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(var(--interest-rgb), 0.2);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  background: radial-gradient(circle at 100% 0%, rgba(var(--interest-rgb), 0.12), transparent 75%), #fff;
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+.dark .interest-card {
+  background: radial-gradient(circle at 100% 0%, rgba(var(--interest-rgb), 0.14), transparent 75%), #171c25;
+}
+.interest-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 1.5rem 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgb(var(--interest-rgb)), transparent);
+}
+.interest-card:hover {
+  border-color: rgba(var(--interest-rgb), 0.5);
+  box-shadow: 0 8px 32px -16px rgba(var(--interest-rgb), 0.35);
+}
+.interest-card--cyan { --interest-rgb: 6, 182, 212; }
+.interest-card--amber { --interest-rgb: 245, 158, 11; }
+.interest-card--rose { --interest-rgb: 244, 63, 94; }
+.interest-icon {
+  display: inline-flex;
+  padding: 0.8rem;
+  border-radius: 0.9rem;
+  background: rgba(var(--interest-rgb), 0.12);
+  color: rgb(var(--interest-rgb));
+}
+.dark .interest-icon { color: color-mix(in srgb, rgb(var(--interest-rgb)), white 30%); }
+.interest-number {
+  color: rgba(var(--interest-rgb), 0.6);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .interest-card { transition: none; }
+}

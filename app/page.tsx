@@ -19,6 +19,10 @@ import {
   Crown,
   Microscope,
   Palette,
+  PenLine,
+  Gamepad2,
+  Play,
+  Users,
 } from "lucide-react";
 
 const navLinks = [
@@ -873,11 +877,32 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="beyond-work" className="scroll-mt-32 border-t border-slate-200/60 bg-white py-16 dark:border-[#272c35] dark:bg-[#151920]">
+        <section id="beyond-work" className="off-clock scroll-mt-32 border-t border-slate-200/60 py-20 dark:border-[#272c35]">
           <div className="mx-auto max-w-6xl px-4">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Beyond Work</h2>
-              <p className="mt-5 text-base leading-relaxed text-slate-600 dark:text-[#c5ccd9]">Outside work, I enjoy writing, playing video games, watching YouTube, and spending time with friends.</p>
+            <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+              <div className="max-w-2xl">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-violet-600 dark:text-violet-300">A little more MJ</p>
+                <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Beyond Work</h2>
+                <p className="mt-5 text-base leading-relaxed text-slate-600 dark:text-[#c5ccd9]">Outside work, I enjoy writing, playing video games, watching YouTube, and spending time with friends.</p>
+              </div>
+              <span className="off-clock-tag"><span aria-hidden="true">✦</span> Off the clock</span>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { title: "Writing", note: "Room for a new idea.", icon: PenLine, color: "violet", number: "01" },
+                { title: "Video games", note: "A different kind of challenge.", icon: Gamepad2, color: "cyan", number: "02" },
+                { title: "YouTube", note: "Just one more video.", icon: Play, color: "amber", number: "03" },
+                { title: "Friends", note: "Good company. Better conversations.", icon: Users, color: "rose", number: "04" },
+              ].map(({ title, note, icon: Icon, color, number }) => (
+                <article key={title} className={`interest-card interest-card--${color}`}>
+                  <div className="mb-12 flex items-start justify-between">
+                    <span className="interest-icon"><Icon className="h-6 w-6" aria-hidden="true" strokeWidth={1.6} /></span>
+                    <span className="interest-number" aria-hidden="true">{number}</span>
+                  </div>
+                  <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{note}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
